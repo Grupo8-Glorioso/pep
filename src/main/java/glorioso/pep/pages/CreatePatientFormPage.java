@@ -16,16 +16,16 @@ import java.util.List;
 
 import static ch.lambdaj.Lambda.convert;
 
-@DefaultUrl("http://google.com") //so que nao
+@DefaultUrl("http://www.dac.unicamp.br/portal/") //so que nao
 public class CreatePatientFormPage extends PageObject {
 
-    @FindBy(name="name_field")
+    @FindBy(name="q")
     private WebElementFacade nameField;
     
-    @FindBy(name="submit_button")
+    @FindBy(name="sa")
     private WebElementFacade submitButton;
     
-    @FindBy(name="confirm_alert_title")
+    @FindBy(name="busca")
     private WebElementFacade ConfirmAlertTitle;
     
     public void fill(String name) {
@@ -33,7 +33,7 @@ public class CreatePatientFormPage extends PageObject {
     }
     
     public void submit() {
-    	submitButton.click();
+    	//submitButton.click();
     }
     
     public String getConfirmedPatientName() {

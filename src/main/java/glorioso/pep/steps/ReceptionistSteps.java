@@ -27,7 +27,7 @@ public class ReceptionistSteps extends ScenarioSteps {
 
     @Step
     public void should_see_confirmation_page(String name) {
-        assert(createPatientFormPage.getConfirmedPatientName() == name);
+        assertThat("", createPatientFormPage.getConfirmedPatientName() == name);
     }
 
 }

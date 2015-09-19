@@ -17,3 +17,4 @@ Scenario: Create a new patient
 Given the user is on the patient management page
 When the user starts to create a new patient
 Then they should see the patient creation form
+
