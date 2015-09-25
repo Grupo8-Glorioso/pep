@@ -1,19 +1,14 @@
-Create patient
+Read patient
 
 Meta:
 @driver firefox 
 
 Narrative:
-In order to create a new patient
-As a receptionist
-I want to register the demographic data
+In order to see a patient’s data
+As a user
+I want to search for the patient
 
-Scenario: Create 'Jose Silva'
-Given the user is creating a patient
-When the user enters the information from 'Jose Silva'
-Then they should see a confirmation of the creation of 'Jose Silva'
-
-Scenario: Create a new patient
-Given the user is managing patients
-When the user creates a new patient
-Then they should see the patient creation form
+Scenario: Consult existing patient
+Given the user is on the patient search page
+When the user fills and submits the form with information from desired patient
+Then they should see the corresponding patient information 
