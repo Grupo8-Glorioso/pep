@@ -16,4 +16,4 @@ Then they should see information for 'Jose Silva'
 Scenario: Consult non-existing patient
 Given the user is on the patient search page
 When the user searches for a non-existing patient
-Then they should see an message informing that the patient does not exist
+Then they should see a message informing that the patient does not exist
