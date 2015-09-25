@@ -14,19 +14,17 @@ public class CreatePatientStepDefinitions {
     @Steps
     ReceptionistSteps receptionist;
 
-    @Given("the user is on the patient creation form")
+    @Given("the user is creating a patient")
     public void givenTheUserIsOnThePatientCreationForm() {
     	receptionist.is_on_the_patient_creation_form();
     }
 
-    @When("the user fills and submits the form with information from '$name'")
-   // @Alias("the user fills and submits the form with information from <name>")
+    @When("the user enters the information from '$name'")
     public void whenTheUserFillsAndSubmitsTheFormWithInformationFrom(String name) {
     	receptionist.fill_and_submit(name);
     }
 
-    @Then("they should see a confirmation page with information from '$name'")
-   // @Alias("they should see a confirmation page with information from <name>")
+    @Then("they should see a confirmation of the creation of '$name'")
     public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(String name) {
     	receptionist.should_see_confirmation_page(name);
     }
