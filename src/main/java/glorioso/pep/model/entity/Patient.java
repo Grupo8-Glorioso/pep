@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Patient implements Serializable {
+	
+	// necessario para o eclipse nao reclamar
+	private static final long serialVersionUID = 2L;
+	
 	public long getIdPatient() {
 		return idPatient;
 	}
