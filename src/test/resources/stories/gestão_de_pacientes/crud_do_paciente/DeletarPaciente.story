@@ -12,3 +12,4 @@ Scenario: Remove a patient 'Jose Silva'
 Given the doctor is managing a patient 'Jose Silva'
 When the doctor chooses to remove the patient 'Jose Silva'
 Then the patient is marked as removed and should not appears in searches
+Then the system record the audit 'removed'

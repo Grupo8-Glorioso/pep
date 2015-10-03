@@ -12,6 +12,7 @@ Scenario: Consult information for 'Jose Silva'
 Given the user is on the patient search page
 When the user searches for 'Jose Silva'
 Then they should see information for 'Jose Silva'
+Then the system record the audit 'read'
 
 Scenario: Consult non-existing patient
 Given the user is on the patient search page
