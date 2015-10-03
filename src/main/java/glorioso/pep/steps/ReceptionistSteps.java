@@ -10,10 +10,14 @@ public class ReceptionistSteps extends ScenarioSteps {
 	private static final long serialVersionUID = 1L;
 	
 	CreatePatientFormPage createPatientFormPage;
-	
+
     @Step
-	public void fill_and_submit(String name) {
-        createPatientFormPage.fill(name);
+	public void fill_and_submit_create_form(String name, String birthDate, String maritalStatus, String phone,
+								String address, String neighborhood, String zipcode, String birthPlace, 
+								String fatherName, String motherName) 
+    {
+        createPatientFormPage.fill(name, birthDate, maritalStatus, phone, address, neighborhood, zipcode, birthPlace,
+        						   fatherName, motherName);
         createPatientFormPage.submit();
     }
 
@@ -26,5 +30,10 @@ public class ReceptionistSteps extends ScenarioSteps {
     public void should_see_confirmation_page(String name) {
         assert(createPatientFormPage.getConfirmedPatientName() == name);
     }
-
+    
+    @Step
+    public void search_for_patient(String name)
+    {
+    	assert(false == true);
+    }
 }

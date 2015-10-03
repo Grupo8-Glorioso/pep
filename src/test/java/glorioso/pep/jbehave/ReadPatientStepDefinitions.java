@@ -2,11 +2,9 @@ package glorioso.pep.jbehave;
 
 import net.thucydides.core.annotations.Steps;
 
-import org.jbehave.core.annotations.Alias;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
-
 import glorioso.pep.steps.ReceptionistSteps;
 
 public class ReadPatientStepDefinitions {
@@ -21,7 +19,7 @@ public class ReadPatientStepDefinitions {
 
     @When("the user searches for '$name'")
     public void whenTheUserSearchesForName(String name) {
-    	receptionist.fill_and_submit(name);
+    	receptionist.search_for_patient(name);
     }
     
     @When("the user fills and submits '$age' and '$marital_status'")
