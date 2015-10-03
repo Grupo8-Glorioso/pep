@@ -29,6 +29,11 @@ public class ReadPatientStepDefinitions {
     	receptionist.should_see_confirmation_page(name);
     }
     
+    @Then("they should see a list only of patients that satisfy the previous criteria")
+    public void thenTheyShouldSeeInformationFor(String name) {
+    	receptionist.should_see_confirmation_page(name);
+    }
+    
     @Then("the system record the audit '$audit'")
     public void thenTheSystemRecordTheAudit(String audit) {
     	receptionist.should_see_confirmation_page(audit);
