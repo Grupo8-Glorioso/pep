@@ -1,4 +1,4 @@
-Delete patient
+Deletar paciente
 
 Meta:
 @driver firefox 

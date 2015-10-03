@@ -1,4 +1,4 @@
-Create patient
+Cadastro de Paciente
 
 Meta:
 @driver firefox 

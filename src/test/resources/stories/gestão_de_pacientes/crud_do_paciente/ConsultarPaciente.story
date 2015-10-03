@@ -1,4 +1,4 @@
-Read patient
+Consultar Paciente
 
 Meta:
 @driver firefox 

@@ -1,4 +1,4 @@
-Register events on audit record
+Registrar eventos na trilha de auditoria
 
 Meta:
 @driver firefox 

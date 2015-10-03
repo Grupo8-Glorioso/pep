@@ -1,4 +1,4 @@
-Create healthcare plan
+Criar Plano de Saúde
 
 Meta:
 @driver firefox 
