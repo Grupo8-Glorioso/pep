@@ -23,6 +23,7 @@ Scenario: Consult list of patients with a specific filter filter
 Given the user is on the patient search page
 When the user fills and submits the form with a certain criteria for filtering filter
 Then they should see a list only of patients that satisfy the previous criteria
+Then the system record the audit 'read'
 
 |filter|
 ||
