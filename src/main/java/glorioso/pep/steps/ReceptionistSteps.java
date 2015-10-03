@@ -10,7 +10,7 @@ public class ReceptionistSteps extends ScenarioSteps {
 	private static final long serialVersionUID = 1L;
 	
 	CreatePatientFormPage createPatientFormPage;
-
+	
     @Step
 	public void fill_and_submit(String name) {
         createPatientFormPage.fill(name);
