@@ -24,6 +24,11 @@ public class ReadPatientStepDefinitions {
     	receptionist.fill_and_submit(name);
     }
     
+    @When("the user fills and submits '$age' and '$marital_status'")
+    public void whenTheUserFillsAndSubmits(String age, String marital_status) {
+    	receptionist.fill_and_submit(age, marital_status);
+    }    
+    
     @Then("they should see information for '$name'")
     public void thenTheyShouldSeeInformationFor(String name) {
     	receptionist.should_see_confirmation_page(name);
