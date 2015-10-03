@@ -1,12 +1,12 @@
-Create patient
+Atualizar Paciente
 
 Meta:
 @driver firefox 
 
 Narrative:
-In order to create a new patient
-As a receptionist
-I want to register the demographic data
+In order to update a patient's data
+As a user
+I want to overwrite the old data with new data
 
 Scenario: Update with invalid info
 Given the user is managing a patient 
@@ -17,3 +17,4 @@ Scenario: Update a patient’s demographic info
 Given the user is managing a patient
 When the user updates a demographic info
 Then they should see the patient’s demographic info updated
+Then the system record the audit 'updated'

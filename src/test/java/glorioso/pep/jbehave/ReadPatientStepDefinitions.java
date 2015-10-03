@@ -4,14 +4,14 @@ import net.thucydides.core.annotations.Steps;
 
 import java.util.Map;
 
+import org.jbehave.core.annotations.Alias;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.jbehave.core.model.ExamplesTable;
-
 import glorioso.pep.steps.ReceptionistSteps;
 
-public class CreatePatientStepDefinitions {
+public class ReadPatientStepDefinitions {
 
     @Steps
     ReceptionistSteps receptionist;
@@ -21,9 +21,8 @@ public class CreatePatientStepDefinitions {
     	receptionist.is_on_the_patient_creation_form();
     }
 
-    @When("the user enters and submits the patient information: $patient_table")
-    public void whenTheUserFillsAndSubmitsTheFormWithInformationFrom(ExamplesTable patientTable) 
-    {
+    @When("the user enters and submits the patient information: '$patientTable'")
+    public void whenTheUserFillsAndSubmitsTheFormWithInformationFrom(ExamplesTable patientTable) {
     	Map<String, String> patient = patientTable.getRow(0);
     	receptionist.fill_and_submit(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
     								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
@@ -32,6 +31,7 @@ public class CreatePatientStepDefinitions {
     }
 
     @Then("they should see a confirmation of the creation of '$name'")
+    // @Alias("they should see a confirmation of the creation of <name>")
     public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(String name) {
     	receptionist.should_see_confirmation_page(name);
     }
