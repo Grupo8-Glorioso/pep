@@ -13,3 +13,8 @@ Given the user is creating a patient
 When the user enters the information from 'Jose Silva'
 Then they should see a confirmation of the creation of 'Jose Silva'
 Then the system record the audit 'created'
+
+Scenario: Create an already existing patient 'rg'
+Given the user is creating a patient
+When the user enters the 'rg' from an existing patient
+Then they should see an error message informing a duplicate
