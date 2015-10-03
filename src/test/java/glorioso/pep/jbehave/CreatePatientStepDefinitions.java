@@ -25,7 +25,7 @@ public class CreatePatientStepDefinitions {
     public void whenTheUserFillsAndSubmitsTheFormWithInformationFrom(ExamplesTable patientTable) 
     {
     	Map<String, String> patient = patientTable.getRow(0);
-    	receptionist.fill_and_submit(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
+    	receptionist.fill_and_submit_create_form(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
     								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
     								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
     								 patient.get("mother_name"));

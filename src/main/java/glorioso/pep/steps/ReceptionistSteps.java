@@ -12,7 +12,7 @@ public class ReceptionistSteps extends ScenarioSteps {
 	CreatePatientFormPage createPatientFormPage;
 
     @Step
-	public void fill_and_submit(String name, String birthDate, String maritalStatus, String phone,
+	public void fill_and_submit_create_form(String name, String birthDate, String maritalStatus, String phone,
 								String address, String neighborhood, String zipcode, String birthPlace, 
 								String fatherName, String motherName) 
     {
@@ -30,5 +30,10 @@ public class ReceptionistSteps extends ScenarioSteps {
     public void should_see_confirmation_page(String name) {
         assert(createPatientFormPage.getConfirmedPatientName() == name);
     }
-
+    
+    @Step
+    public void search_for_patient(String name)
+    {
+    	assert(false == true);
+    }
 }
