@@ -1,6 +1,7 @@
 package glorioso.pep.steps;
 
 import glorioso.pep.pages.CreatePatientFormPage;
+import glorioso.pep.pages.UpdatePatientFormPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -10,6 +11,7 @@ public class ReceptionistSteps extends ScenarioSteps {
 	private static final long serialVersionUID = 1L;
 	
 	CreatePatientFormPage createPatientFormPage;
+	UpdatePatientFormPage updatePatientFormPage;
 
     @Step
 	public void fill_and_submit_create_form(String name, String birthDate, String maritalStatus, String phone,
@@ -32,8 +34,27 @@ public class ReceptionistSteps extends ScenarioSteps {
     }
     
     @Step
+	public void is_on_the_patient_update_form() {
+		updatePatientFormPage.open();
+	}
+
+    @Step
+	public void update_and_submit(String field, String info) {
+        updatePatientFormPage.fill(field, info);
+        updatePatientFormPage.submit();
+	}
+
+    @Step
+	public void should_see_confirmation_page_field_info(String field,
+			String info) {
+		assert(updatePatientFormPage.getConfirmedField() == field);
+		assert(updatePatientFormPage.getConfirmedInfo() == info);
+	}
+    
+    @Step
     public void search_for_patient(String name)
     {
     	assert(false == true);
     }
+
 }
