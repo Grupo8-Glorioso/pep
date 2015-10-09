@@ -2,11 +2,9 @@ package glorioso.pep.jbehave;
 
 import net.thucydides.core.annotations.Steps;
 
-import org.jbehave.core.annotations.Alias;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
-
 import glorioso.pep.steps.ReceptionistSteps;
 
 public class ReadPatientStepDefinitions {
@@ -14,21 +12,34 @@ public class ReadPatientStepDefinitions {
     @Steps
     ReceptionistSteps receptionist;
 
-    @Given("the user is creating a patient")
-    public void givenTheUserIsOnThePatientCreationForm() {
+    @Given("the user is on the patient search page")
+    public void givenTheUserIsOnThePatientReadForm() {
     	receptionist.is_on_the_patient_creation_form();
     }
 
-    @When("the user enters the information from '$name'")
-    // @Alias("the user enters the information from <name>")
-    public void whenTheUserFillsAndSubmitsTheFormWithInformationFrom(String name) {
-    	receptionist.fill_and_submit(name);
+    @When("the user searches for '$name'")
+    public void whenTheUserSearchesForName(String name) {
+    	receptionist.search_for_patient(name);
     }
-
-    @Then("they should see a confirmation of the creation of '$name'")
-    // @Alias("they should see a confirmation of the creation of <name>")
-    public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(String name) {
+    
+    @When("the user fills and submits '$age' and '$marital_status'")
+    public void whenTheUserFillsAndSubmits(String age, String marital_status) {
+    	receptionist.fill_and_submit(age, marital_status);
+    }    
+    
+    @Then("they should see information for '$name'")
+    public void thenTheyShouldSeeInformationFor(String name) {
     	receptionist.should_see_confirmation_page(name);
+    }
+    
+    @Then("they should see a list only of patients that satisfy the previous criteria")
+    public void thenTheyShouldSeeInformationFor(String name) {
+    	receptionist.should_see_confirmation_page(name);
+    }
+    
+    @Then("the system record the audit '$audit'")
+    public void thenTheSystemRecordTheAudit(String audit) {
+    	receptionist.should_see_confirmation_page(audit);
     }
 
 }

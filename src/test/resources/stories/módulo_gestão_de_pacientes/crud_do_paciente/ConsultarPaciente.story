@@ -16,18 +16,11 @@ Then the system record the audit 'read'
 
 Scenario: Consult non-existing patient
 Given the user is on the patient search page
-When the user searches for a non-existing patient
+When the user searches for 'zzzz'
 Then they should see a message informing that the patient does not exist
 
 Scenario: Consult list of patients with a specific filter filter
 Given the user is on the patient search page
-When the user fills and submits the form with a certain criteria for filtering filter
-Then they should see a list only of patients that satisfy the previous criteria
+When the user fills and submits '21' and 'Solteiro'
+Then they should see a list only of patients that satisfy '21' and 'Solteiro'
 Then the system record the audit 'read'
-
-|filter|
-||
-||
-||
-||
-||
