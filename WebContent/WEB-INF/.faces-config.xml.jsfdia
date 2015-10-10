@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PROCESS model-entity="JSFProcess"/>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="176,92,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="confirmation::#confirmation.xhtml"
+    NAME="output" PATH="/confirmation.xhtml"
+    TARGET="rules:#confirmation.xhtml" TITLE="confirmation" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#confirmation.xhtml"
+  PATH="/confirmation.xhtml" SHAPE="363,167,0,0"
+  model-entity="JSFProcessGroup" persistent="true"/>
+</PROCESS>

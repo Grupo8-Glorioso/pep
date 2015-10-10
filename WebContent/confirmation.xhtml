@@ -10,20 +10,9 @@
 			<h:form id="form">
 
 				<br/><br/>
-
-				<h:outputLabel value="Mensagem:" for="mensagem" />
-				<h:inputText id="mensagem" value="#{testeBean.msg}" />
-				<br/>
-				<h:outputLabel value="Mensagem recebida:" for="mensagemRecebida" />
-				<h:outputText id="mensagemRecebida" value="#{testeBean.msg}" />
 				
-				<br/><br/>
-				<h:commandButton action="#{testeBean.recebeMsg}" value="enviar" />
-				<br/>
-				<br />
-				
-				<br/>
-				
+				<h:outputLabel value="Mensagem recebida! Mandou bem!" for="mensagemRecebida" />
+				<h:outputText id="mensagemRecebida" value="#{TesteBean.msg}" /> 
 				
 			</h:form>
 		</f:view>

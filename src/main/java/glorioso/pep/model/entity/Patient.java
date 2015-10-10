@@ -6,6 +6,8 @@ import java.util.List;
 
 public class Patient implements Serializable {
 	
+	public static Patient patient = new Patient();
+	
 	// necessario para o eclipse nao reclamar
 	private static final long serialVersionUID = 2L;
 	
