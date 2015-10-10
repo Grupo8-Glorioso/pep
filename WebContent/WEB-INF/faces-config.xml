@@ -2,6 +2,11 @@
 <faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
  <managed-bean>
+  <managed-bean-name>patient</managed-bean-name>
+  <managed-bean-class>glorioso.pep.model.entity.Patient</managed-bean-class>
+  <managed-bean-scope>request</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
   <managed-bean-name>testeBean</managed-bean-name>
   <managed-bean-class>controller.TesteBean</managed-bean-class>
   <managed-bean-scope>request</managed-bean-scope>
