@@ -16,13 +16,13 @@ public class DeletePatientStepDefinitions {
 
     @Given("the doctor is managing patient '$name'")
     public void givenTheDoctorIsManagingPatient(String name) {
-    	doctor.is_on_the_management_form(name);
+    	//doctor.is_on_the_management_form(name);
     }
 
     @When("the doctor chooses to remove the patient '$name'")
     // @Alias("the doctor chooses to remove the patient <name>")
     public void whenTheDoctorChoosesToRemoveThePatient(String name) {
-    	doctor.remove_and_submit(name);
+    	//doctor.remove_and_submit(name);
     }
 
     @Then("they should see a confirmation about the deletion of the patient '$name'")
