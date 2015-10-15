@@ -22,20 +22,20 @@ public class ReadPatientStepDefinitions {
     	receptionist.search_for_patient(name);
     }
     
-    @When("the user fills and submits '$age' and '$marital_status'")
-    public void whenTheUserFillsAndSubmits(String age, String marital_status) {
-    	receptionist.fill_and_submit(age, marital_status);
-    }    
+    //@When("the user fills and submits '$age' and '$marital_status'")
+   // public void whenTheUserFillsAndSubmits(String age, String marital_status) {
+    //	receptionist.fill_and_submit(age, marital_status);
+    //}    
     
     @Then("they should see information for '$name'")
     public void thenTheyShouldSeeInformationFor(String name) {
     	receptionist.should_see_confirmation_page(name);
     }
     
-    @Then("they should see a list only of patients that satisfy the previous criteria")
-    public void thenTheyShouldSeeInformationFor(String name) {
-    	receptionist.should_see_confirmation_page(name);
-    }
+    //@Then("they should see a list only of patients that satisfy the previous criteria")
+    //public void thenTheyShouldSeeInformationFor(String name) {
+   // 	receptionist.should_see_confirmation_page(name);
+    //}
     
     @Then("the system record the audit '$audit'")
     public void thenTheSystemRecordTheAudit(String audit) {

@@ -24,7 +24,7 @@ public class UpdatePatientFormPage extends PageObject {
     private WebElement ConfirmAlertTitle;
     
     public void fill(String field, String info) {
-    	nameField.sendKeys(name);
+    	nameField.sendKeys(info);
     }
     
     public void submit() {
@@ -34,11 +34,6 @@ public class UpdatePatientFormPage extends PageObject {
     public String getConfirmedPatientName() {
     	return ConfirmAlertTitle.getText();
     }
-
-	public void fill(String field, String info) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public String getConfirmedField() {
 		// TODO Auto-generated method stub

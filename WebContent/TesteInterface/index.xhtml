@@ -8,9 +8,9 @@
 	<h:body>
 		<f:view>
 			<h:form id="form">
-				<h:outputText value="#{testeBean.txt}" />
+
 				<br/><br/>
-				
+
 				<h:outputLabel value="Mensagem:" for="mensagem" />
 				<h:inputText id="mensagem" value="#{testeBean.msg}" />
 				<br/>
@@ -18,8 +18,12 @@
 				<h:outputText id="mensagemRecebida" value="#{testeBean.msg}" />
 				
 				<br/><br/>
+				<h:commandButton action="#{testeBean.recebeMsg}" value="enviar" />
+				<br/>
+				<br />
 				
-				<h:commandButton action="#{testeBean.recebeMsg}" value="Submit" />
+				<br/>
+				
 				
 			</h:form>
 		</f:view>
