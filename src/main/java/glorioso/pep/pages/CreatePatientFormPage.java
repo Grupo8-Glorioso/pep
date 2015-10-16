@@ -31,6 +31,8 @@ public class CreatePatientFormPage extends PageObject {
     private WebElement fatherNameField;
     @FindBy(name="mother_name_field")
     private WebElement motherNameField;
+    @FindBy(name="cpf_field")
+    private WebElement cpfField;
     
     @FindBy(name="submit_button")
     private WebElement submitButton;
@@ -40,7 +42,7 @@ public class CreatePatientFormPage extends PageObject {
     
     public void fill(String name, String birthDate, String maritalStatus, String phone,
 					String address, String neighborhood, String zipcode, String birthPlace, 
-					String fatherName, String motherName) 
+					String fatherName, String motherName, String cpf) 
     {
     	nameField.sendKeys(name);
     	birthDateField.sendKeys(birthDate);
@@ -52,6 +54,7 @@ public class CreatePatientFormPage extends PageObject {
     	birthPlaceField.sendKeys(birthPlace);
     	fatherNameField.sendKeys(fatherName);
     	motherNameField.sendKeys(motherName);
+    	cpfField.sendkeys(cpf);
     }
     
     public void submit() {
