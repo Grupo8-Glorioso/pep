@@ -29,36 +29,7 @@
 				<h:inputText id="nomemae" value="#{patient.motherName}" />
 				<br />
 				<br />
-				<!-- 
-				<br />
-				<h:outputLabel value="Tipo: " for="tipoContact" />
-				<h:selectOneMenu id="tipoContact" value="#{patient.contactType}">
-    				<f:selectItems value="#{patient.contactTypes}" />
-				</h:selectOneMenu>
-				<br />
-				<br />
-				<h:outputLabel value="Informação: " for="infoContact" />
-				<h:inputText id="infoContact" value="#{patient.contactInfo}" />
-				<br />
-				<br />
-				<h:commandButton action="#{patient.CreateContact}" value="Inserir contato" />
-				<br />
-				
-				
-				<h:dataTable value="#{patient.contactList}" var="contactList"
-				   styleClass="employeeTable"
-				   headerClass="employeeTableHeader"
-				   rowClasses="contact">
-				   <h:column>    				
-				      <f:facet name="header">Tipo</f:facet>    				
-				      
-				   </h:column>
-				   <h:column>
-				      <f:facet name="header">Informação</f:facet>
-				      
-				   </h:column>
-				</h:dataTable>
-				 -->
+
 				<br/>
 				<h:commandButton action="#{patient.Insert}" value="Cadastrar paciente" />
 				
