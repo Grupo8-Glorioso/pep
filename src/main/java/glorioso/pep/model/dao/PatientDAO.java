@@ -14,6 +14,7 @@ public class PatientDAO {
 	private Session session;
 	
 	public PatientDAO(Session session) {
+		System.out.println("bora");
 		this.session = session;
 	}
 	

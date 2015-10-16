@@ -16,11 +16,33 @@
 				<h:outputLabel value="Nome da mãe: " for="motherNameReceived" />
 				<h:outputText id="motherNameReceived" value="#{patient.motherName}" />
 				<br />
+				<h:outputLabel value="Nome do pai: " for="fatherNameReceived" />
+				<h:outputText id="fatherNameReceived" value="#{patient.fatherName}" />
+				<br />
 				<h:outputLabel value="CPF: " for="cpfReceived" />
 				<h:outputText id="cpfReceived" value="#{patient.CPF}" />
 				<br />
 				<h:outputLabel value="Gênero: " for="genderReceived" />
 				<h:outputText id="genderReceived" value="#{patient.gender}" />
+				<br />
+				<h:outputLabel value="Endereço: " for="addressReceived" />
+				<h:outputText id="addressReceived" value="#{patient.address}" />
+				<br />
+				<h:outputLabel value="Bairro: " for="neighborhoodReceived" />
+				<h:outputText id="neighborhoodReceived" value="#{patient.neighborhood}" />
+				<br />
+				<h:outputLabel value="Cidade Natal: " for="birthPlaceReceived" />
+				<h:outputText id="birthPlaceReceived" value="#{patient.birthPlace}" />
+				<br />
+				<h:outputLabel value="CEP: " for="zipCodeReceived" />
+				<h:outputText id="zipCodeReceived" value="#{patient.zipCode}" />
+				<br />
+				<h:outputLabel value="Estado Civil: " for="maritalStatusReceived" />
+				<h:outputText id="maritalStatusReceived" value="#{patient.maritalStatus}" />
+				<br />
+				<h:outputLabel value="Data de Nascimento: " for="birthDateReceived" />
+				<h:outputText id="birthDateReceived" value="#{patient.birthDate}" />
+				<br />			
 			</h:form>
 		</f:view>
 	</h:body>
