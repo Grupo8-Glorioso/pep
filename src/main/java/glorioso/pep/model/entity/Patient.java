@@ -87,8 +87,17 @@ public class Patient implements Serializable {
 	
 	private String name;
 	private String motherName;
+	private String fatherName;
+	private String phoneNumber;
 	private String gender;
+	private String maritalStatus;
+	private String address;
+	private String neighborhood;
+	private String zipCode;
+	private String birthPlace;
+	private String birthDate;
 	private String CPF;
+	
 	private Contact c = new Contact();
 	private List<Contact> contactList = new ArrayList<Contact>();
 	
@@ -103,5 +112,53 @@ public class Patient implements Serializable {
 		contactList.add(c);
 		System.out.println(contactList);
 		//contactList.add(contact);
+	}
+	public String getFatherName() {
+		return fatherName;
+	}
+	public void setFatherName(String fatherName) {
+		this.fatherName = fatherName;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public String getMaritalStatus() {
+		return maritalStatus;
+	}
+	public void setMaritalStatus(String maritalStatus) {
+		this.maritalStatus = maritalStatus;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getNeighborhood() {
+		return neighborhood;
+	}
+	public void setNeighborhood(String neighborhood) {
+		this.neighborhood = neighborhood;
+	}
+	public String getZipCode() {
+		return zipCode;
+	}
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+	public String getBirthPlace() {
+		return birthPlace;
+	}
+	public void setBirthPlace(String birthPlace) {
+		this.birthPlace = birthPlace;
+	}
+	public String getBirthDate() {
+		return birthDate;
+	}
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
 }
