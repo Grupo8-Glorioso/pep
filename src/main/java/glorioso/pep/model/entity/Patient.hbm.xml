@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 16, 2015 8:06:26 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="glorioso.pep.model.entity.Patient" table="PATIENT">
+        <id name="idPatient" type="long">
+            <column name="IDPATIENT" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="patientDao" class="glorioso.pep.model.dao.PatientDAO" access="field" fetch="join">
+            <column name="PATIENTDAO" />
+        </many-to-one>
+        <property name="idPatientOrg" type="long">
+            <column name="IDPATIENTORG" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="motherName" type="java.lang.String">
+            <column name="MOTHERNAME" />
+        </property>
+        <property name="fatherName" type="java.lang.String">
+            <column name="FATHERNAME" />
+        </property>
+        <property name="phoneNumber" type="java.lang.String">
+            <column name="PHONENUMBER" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="GENDER" />
+        </property>
+        <property name="maritalStatus" type="java.lang.String">
+            <column name="MARITALSTATUS" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="neighborhood" type="java.lang.String">
+            <column name="NEIGHBORHOOD" />
+        </property>
+        <property name="zipCode" type="java.lang.String">
+            <column name="ZIPCODE" />
+        </property>
+        <property name="birthPlace" type="java.lang.String">
+            <column name="BIRTHPLACE" />
+        </property>
+        <property name="birthDate" type="java.lang.String">
+            <column name="BIRTHDATE" />
+        </property>
+        <property name="CPF" type="java.lang.String">
+            <column name="CPF" />
+        </property>
+        <many-to-one name="c" class="glorioso.pep.model.entity.Contact" access="field" fetch="join">
+            <column name="C" />
+        </many-to-one>
+        <list name="contactList" inverse="false" table="CONTACT" lazy="true">
+            <key>
+                <column name="IDPATIENT" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="glorioso.pep.model.entity.Contact" />
+        </list>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 16, 2015 8:06:26 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="glorioso.pep.model.entity.Contact" table="CONTACT">
+        <id name="type" type="java.lang.String">
+            <column name="TYPE" />
+            <generator class="assigned" />
+        </id>
+        <property name="info" type="java.lang.String">
+            <column name="INFO" />
+        </property>
+    </class>
+</hibernate-mapping>
