@@ -22,6 +22,7 @@ When the user enters and submits the patient information:
 |birth_place    |Osasco SP|
 |father_name    |Carlos Silva|
 |mother_name    |Maria Joana da Silva|
+|cpf    		|12312312311|
 Then they should see a confirmation of the creation of 'Jose Silva'
 Then the system record the audit 'created'
 

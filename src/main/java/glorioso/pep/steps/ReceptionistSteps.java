@@ -16,10 +16,10 @@ public class ReceptionistSteps extends ScenarioSteps {
     @Step
 	public void fill_and_submit_create_form(String name, String birthDate, String maritalStatus, String phone,
 								String address, String neighborhood, String zipcode, String birthPlace, 
-								String fatherName, String motherName) 
+								String fatherName, String motherName, String cpf) 
     {
         createPatientFormPage.fill(name, birthDate, maritalStatus, phone, address, neighborhood, zipcode, birthPlace,
-        						   fatherName, motherName);
+        						   fatherName, motherName, cpf);
         createPatientFormPage.submit();
     }
 

@@ -37,9 +37,6 @@ public class CreatePatientFormPage extends PageObject {
     @FindBy(name="submit_button")
     private WebElement submitButton;
     
-    @FindBy(name="confirm_title")
-    private WebElement ConfirmAlertTitle;
-    
     public void fill(String name, String birthDate, String maritalStatus, String phone,
 					String address, String neighborhood, String zipcode, String birthPlace, 
 					String fatherName, String motherName, String cpf) 
@@ -54,7 +51,7 @@ public class CreatePatientFormPage extends PageObject {
     	birthPlaceField.sendKeys(birthPlace);
     	fatherNameField.sendKeys(fatherName);
     	motherNameField.sendKeys(motherName);
-    	cpfField.sendkeys(cpf);
+    	cpfField.sendKeys(cpf);
     }
     
     public void submit() {
@@ -62,6 +59,6 @@ public class CreatePatientFormPage extends PageObject {
     }
     
     public String getConfirmedPatientName() {
-    	return ConfirmAlertTitle.getText();
+    	return "teste falho";
     }
 }

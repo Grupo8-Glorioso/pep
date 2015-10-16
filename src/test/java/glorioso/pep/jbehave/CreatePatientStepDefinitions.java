@@ -28,7 +28,7 @@ public class CreatePatientStepDefinitions {
     	receptionist.fill_and_submit_create_form(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
     								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
     								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-    								 patient.get("mother_name"));
+    								 patient.get("mother_name"), patient.get("cpf"));
     }
 
     @Then("they should see a confirmation of the creation of '$name'")
