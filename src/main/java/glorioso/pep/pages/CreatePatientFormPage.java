@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl("http://www.google.com") //so que nao
+@DefaultUrl("http://localhost:8080/pep/cadPacientes.xhtml")
 public class CreatePatientFormPage extends PageObject {
 
     @FindBy(name="name_field")
@@ -33,13 +33,15 @@ public class CreatePatientFormPage extends PageObject {
     private WebElement motherNameField;
     @FindBy(name="cpf_field")
     private WebElement cpfField;
+    @FindBy(name="gender_field)")
+    private WebElement genderField;
     
     @FindBy(name="submit_button")
     private WebElement submitButton;
     
     public void fill(String name, String birthDate, String maritalStatus, String phone,
 					String address, String neighborhood, String zipcode, String birthPlace, 
-					String fatherName, String motherName, String cpf) 
+					String fatherName, String motherName, String cpf, String gender) 
     {
     	nameField.sendKeys(name);
     	birthDateField.sendKeys(birthDate);
@@ -52,13 +54,11 @@ public class CreatePatientFormPage extends PageObject {
     	fatherNameField.sendKeys(fatherName);
     	motherNameField.sendKeys(motherName);
     	cpfField.sendKeys(cpf);
+    	genderField.sendKeys(gender);
     }
     
     public void submit() {
     	submitButton.click();
     }
     
-    public String getConfirmedPatientName() {
-    	return "teste falho";
-    }
 }

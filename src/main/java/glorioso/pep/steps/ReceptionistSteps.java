@@ -2,6 +2,7 @@ package glorioso.pep.steps;
 
 import glorioso.pep.pages.CreatePatientFormPage;
 import glorioso.pep.pages.UpdatePatientFormPage;
+import glorioso.pep.pages.ConfirmCreatePatientPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -12,14 +13,15 @@ public class ReceptionistSteps extends ScenarioSteps {
 	
 	CreatePatientFormPage createPatientFormPage;
 	UpdatePatientFormPage updatePatientFormPage;
+	ConfirmCreatePatientPage confirmPatientPage;
 
     @Step
 	public void fill_and_submit_create_form(String name, String birthDate, String maritalStatus, String phone,
 								String address, String neighborhood, String zipcode, String birthPlace, 
-								String fatherName, String motherName, String cpf) 
+								String fatherName, String motherName, String cpf, String gender) 
     {
         createPatientFormPage.fill(name, birthDate, maritalStatus, phone, address, neighborhood, zipcode, birthPlace,
-        						   fatherName, motherName, cpf);
+        						   fatherName, motherName, cpf, gender);
         createPatientFormPage.submit();
     }
 
@@ -29,8 +31,12 @@ public class ReceptionistSteps extends ScenarioSteps {
     }
 
     @Step
-    public void should_see_confirmation_page(String name) {
-        assert(createPatientFormPage.getConfirmedPatientName() == name);
+    public void should_see_confirmation_page(String name, String birthDate, String maritalStatus, String phone,
+			String address, String neighborhood, String zipcode, String birthPlace, 
+			String fatherName, String motherName, String cpf, String gender) {
+       confirmPatientPage.confirm( name,  birthDate,  maritalStatus,  phone,
+				 address,  neighborhood,  zipcode,  birthPlace, 
+				 fatherName,  motherName,  cpf,  gender);
     }
     
     @Step

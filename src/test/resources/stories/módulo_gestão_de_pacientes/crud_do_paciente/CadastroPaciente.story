@@ -23,7 +23,21 @@ When the user enters and submits the patient information:
 |father_name    |Carlos Silva|
 |mother_name    |Maria Joana da Silva|
 |cpf    		|12312312311|
-Then they should see a confirmation of the creation of 'Jose Silva'
+|gender			|Masculino|
+Then they should see a confirmation of the creation of: 
+{transformer=FROM_LANDSCAPE}
+|name           |Jose Silva|
+|birth_date     |07/16/1957|
+|marital_status |divorciado|
+|phone	        |2121212121|
+|address		|Rua 21, casa 2|
+|neighborhood   |Villa 21|
+|zipcode        |1234567|
+|birth_place    |Osasco SP|
+|father_name    |Carlos Silva|
+|mother_name    |Maria Joana da Silva|
+|cpf    		|12312312311|
+|gender			|Masculino|
 Then the system record the audit 'created'
 
 Scenario: Create an already existing patient 'rg'
