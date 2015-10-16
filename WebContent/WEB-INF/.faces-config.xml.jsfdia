@@ -12,4 +12,16 @@
  <PROCESS-ITEM NAME="rules:#confirmation.xhtml"
   PATH="/confirmation.xhtml" SHAPE="363,167,0,0"
   model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#cadPacientes.xhtml"
+  PATH="/cadPacientes.xhtml" SHAPE="150,229,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#cadPacientes.xhtml:0" NAME="item"
+   PATH="/cadPacientes.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="confCadPacientes::#confCadPacientes.xhtml"
+    NAME="output" PATH="/confCadPacientes.xhtml"
+    TARGET="rules:#confCadPacientes.xhtml" TITLE="confCadPacientes" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#confCadPacientes.xhtml"
+  PATH="/confCadPacientes.xhtml" SHAPE="432,280,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
 </PROCESS>

@@ -8,22 +8,57 @@
 	<h:body>
 		<f:view>
 			<h:form id="form">
-
-				<br/><br/>
+				<h3>Cadastro de pacientes</h3>
 				
-				<h:outputLabel value="Nome:" for="nome" />
-				<h:inputText id="nome" value="#{patient.setName}" />
-				<br/>
-				<br/>
-				<h:outputLabel value="Nome da mãe:" for="nomemae" />
-				<h:inputText id="nomemae" value="#{patient.setMotherName}" />
-				<br/>
-				<br/>
-				<h:outputLabel value="CPF:" for="cpf" />
-				<h:inputText id="cpf" value="#{patient.setCPF}" />
-				<br/>
-				<br/>
 				
+				<h:outputLabel value="Nome: " for="nome" />
+				<h:inputText id="nome" value="#{patient.name}" />
+				<br/>
+				<br/>
+				<h:outputLabel value="Gênero: " for="genero" />
+				<h:selectOneMenu id="cbbGender" value="#{patient.gender}">
+    				<f:selectItems value="#{patient.genders}" />
+				</h:selectOneMenu>
+				<br/>
+				<br/>
+				<h:outputLabel value="CPF: " for="cpf" />
+				<h:inputText id="cpf" value="#{patient.CPF}" />
+				<br/>
+				<br/>
+				<h:outputLabel value="Nome da mãe: " for="nomemae" />
+				<h:inputText id="nomemae" value="#{patient.motherName}" />
+				<br />
+				<br />
+				<!-- 
+				<br />
+				<h:outputLabel value="Tipo: " for="tipoContact" />
+				<h:selectOneMenu id="tipoContact" value="#{patient.contactType}">
+    				<f:selectItems value="#{patient.contactTypes}" />
+				</h:selectOneMenu>
+				<br />
+				<br />
+				<h:outputLabel value="Informação: " for="infoContact" />
+				<h:inputText id="infoContact" value="#{patient.contactInfo}" />
+				<br />
+				<br />
+				<h:commandButton action="#{patient.CreateContact}" value="Inserir contato" />
+				<br />
+				
+				
+				<h:dataTable value="#{patient.contactList}" var="contactList"
+				   styleClass="employeeTable"
+				   headerClass="employeeTableHeader"
+				   rowClasses="contact">
+				   <h:column>    				
+				      <f:facet name="header">Tipo</f:facet>    				
+				      
+				   </h:column>
+				   <h:column>
+				      <f:facet name="header">Informação</f:facet>
+				      
+				   </h:column>
+				</h:dataTable>
+				 -->
 				<br/>
 				<h:commandButton action="#{patient.Insert}" value="Cadastrar paciente" />
 				

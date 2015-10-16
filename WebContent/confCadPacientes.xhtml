@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<h:head>
+		<title>PEP</title>
+	</h:head>
+	<h:body>
+		<f:view>
+			<h:form id="form">
+				
+				<p><h:outputLabel value="Cadastro de paciente realizado com sucesso" /></p>
+				<br />
+				<h:outputLabel value="Nome: " for="nameReceived" />
+				<h:outputText id="nameReceived" value="#{patient.name}" />
+				<br />
+				<h:outputLabel value="Nome da mãe: " for="motherNameReceived" />
+				<h:outputText id="motherNameReceived" value="#{patient.motherName}" />
+				<br />
+				<h:outputLabel value="CPF: " for="cpfReceived" />
+				<h:outputText id="cpfReceived" value="#{patient.CPF}" />
+				<br />
+				<h:outputLabel value="Gênero: " for="genderReceived" />
+				<h:outputText id="genderReceived" value="#{patient.gender}" />
+				
+			</h:form>
+		</f:view>
+	</h:body>
+
+</html>
