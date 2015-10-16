@@ -3,11 +3,15 @@ package glorioso.pep.model.entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import glorioso.pep.model.dao.PatientDAO;
+import glorioso.pep.util.HibernateUtil;
 
 public class Patient implements Serializable {
 		
 	// necessario para o eclipse nao reclamar
 	private static final long serialVersionUID = 2L;
+	
+	private PatientDAO patientDao;
 	
 	public long getIdPatient() {
 		return idPatient;
@@ -58,7 +62,6 @@ public class Patient implements Serializable {
 		CPF = cPF;
 	}
 	
-	
 	public List<Contact> getContactList() {
 		return contactList;
 	}
@@ -95,6 +98,11 @@ public class Patient implements Serializable {
 	
 	public String Insert(){
 		System.out.println("Chamou!");
+		
+
+		patientDao = new PatientDAO(HibernateUtil.openSession());
+		System.out.println("Abriu sessao!");
+		patientDao.registerPatient(this);
 		return "confCadPacientes";
 	}
 	

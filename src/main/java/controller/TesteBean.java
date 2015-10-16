@@ -3,9 +3,7 @@ package controller;
 //import glorioso.pep.model.entity.Patient;
 
 public class TesteBean {
-	
-	
-	
+
 	private String text = "Ola JSF";
 	private String msg;
 	
@@ -25,7 +23,6 @@ public class TesteBean {
 		System.out.println("Mensagem recebida: " + msg);
 		return "confirmation";
 	}
-	
 	
 	public String getName() {
 		return "";

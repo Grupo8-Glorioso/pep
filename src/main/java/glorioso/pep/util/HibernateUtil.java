@@ -1,4 +1,4 @@
-/*package glorioso.pep.util;
+package glorioso.pep.util;
 
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
@@ -25,4 +25,4 @@ public class HibernateUtil {
 	public static Session openSession() {
 		return sessionFactory.openSession();
 	}
-}*/
+}
