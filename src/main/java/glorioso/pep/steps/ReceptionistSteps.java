@@ -6,8 +6,8 @@ import glorioso.pep.pages.ConfirmCreatePatientPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-public class ReceptionistSteps extends ScenarioSteps {
-	
+public class ReceptionistSteps extends ScenarioSteps 
+{	
 	// necessario para o eclipse nao reclamar
 	private static final long serialVersionUID = 1L;
 	

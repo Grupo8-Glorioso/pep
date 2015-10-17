@@ -106,11 +106,10 @@ public class Patient implements Serializable {
 	
 	
 	public String Insert(){
-//		System.out.println("Chamou!");
-//		HibernateUtil hi =  new HibernateUtil();
-//		patientDao = new PatientDAO(hi.openSession());
-//		System.out.println("Abriu sessao!");
-//		patientDao.registerPatient(this);
+		System.out.println("Chamou!");
+		patientDao = new PatientDAO(HibernateUtil.openSession());
+		System.out.println("Abriu sessao!");
+		patientDao.registerPatient(this);
 		return "confCadPacientes";
 	}
 	

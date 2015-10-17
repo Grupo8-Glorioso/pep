@@ -9,8 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://localhost:8080/pep/cadPacientes.xhtml")
-public class CreatePatientFormPage extends PageObject {
-
+public class CreatePatientFormPage extends PageObject 
+{
     @FindBy(name="name_field")
     private WebElement nameField;
     @FindBy(name="birth_date_field")
