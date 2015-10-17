@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
 	<h:head>
@@ -10,9 +11,15 @@
 			<h:form id="form">
 				<h3>Cadastro de pacientes</h3>
 				
+				<b:row>
+    				<b:column span="1">
+						<h:outputLabel value="Nome: " for="name_field" />
+					</b:column>
+					<b:column span="2">
+						<h:inputText id="name_field" value="#{patient.name}" />
+					</b:column>
+				</b:row>
 				
-				<h:outputLabel value="Nome: " for="name_field" />
-				<h:inputText id="name_field" value="#{patient.name}" />
 				<br/>
 				<br/>
 				<h:outputLabel value="Gênero: " for="gender_field" />
