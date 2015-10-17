@@ -11,32 +11,32 @@ import net.thucydides.core.pages.PageObject;
 @DefaultUrl("http://localhost:8080/pep/cadPacientes.xhtml")
 public class CreatePatientFormPage extends PageObject 
 {
-    @FindBy(name="name_field")
+    @FindBy(id="name_field")
     private WebElement nameField;
-    @FindBy(name="birth_date_field")
+    @FindBy(id="birth_date_field")
     private WebElement birthDateField;
-    @FindBy(name="marital_status_field")
+    @FindBy(id="marital_status_field")
     private WebElement maritalStatusField;
-    @FindBy(name="phone_field")
+    @FindBy(id="phone_field")
     private WebElement phoneField;
-    @FindBy(name="address_field")
+    @FindBy(id="address_field")
     private WebElement addressField;
-    @FindBy(name="neighborhood_field")
+    @FindBy(id="neighborhood_field")
     private WebElement neighborhoodField;
-    @FindBy(name="zipcode_field")
+    @FindBy(id="zipcode_field")
     private WebElement zipcodeField;
-    @FindBy(name="birth_place_field")
+    @FindBy(id="birth_place_field")
     private WebElement birthPlaceField;
-    @FindBy(name="father_name_field")
+    @FindBy(id="father_name_field")
     private WebElement fatherNameField;
-    @FindBy(name="mother_name_field")
+    @FindBy(id="mother_name_field")
     private WebElement motherNameField;
-    @FindBy(name="cpf_field")
+    @FindBy(id="cpf_field")
     private WebElement cpfField;
-    @FindBy(name="gender_field)")
+    @FindBy(id="gender_field)")
     private WebElement genderField;
     
-    @FindBy(name="submit_button")
+    @FindBy(id="submit_button")
     private WebElement submitButton;
     
     public void fill(String name, String birthDate, String maritalStatus, String phone,
