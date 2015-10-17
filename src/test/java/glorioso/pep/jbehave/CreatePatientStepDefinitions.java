@@ -11,8 +11,8 @@ import org.jbehave.core.model.ExamplesTable;
 
 import glorioso.pep.steps.ReceptionistSteps;
 
-public class CreatePatientStepDefinitions {
-
+public class CreatePatientStepDefinitions 
+{
     @Steps
     ReceptionistSteps receptionist;
 
@@ -28,12 +28,16 @@ public class CreatePatientStepDefinitions {
     	receptionist.fill_and_submit_create_form(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
     								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
     								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-    								 patient.get("mother_name"));
+    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
     }
 
-    @Then("they should see a confirmation of the creation of '$name'")
-    public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(String name) {
-    	receptionist.should_see_confirmation_page(name);
+    @Then("they should see a confirmation of the creation of: $patient_table")
+    public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(ExamplesTable patientTable) {
+    	Map<String, String> patient = patientTable.getRow(0);
+    	receptionist.should_see_confirmation_page(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
+    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
+    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
+    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
     }
 
 }

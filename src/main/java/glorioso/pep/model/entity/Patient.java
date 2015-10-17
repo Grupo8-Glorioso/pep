@@ -3,9 +3,13 @@ package glorioso.pep.model.entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.Entity;
+
 import glorioso.pep.model.dao.PatientDAO;
 import glorioso.pep.util.HibernateUtil;
 
+@Entity
 public class Patient implements Serializable {
 		
 	// necessario para o eclipse nao reclamar
@@ -91,7 +95,7 @@ public class Patient implements Serializable {
 	private String name;
 	private String motherName;
 	private String fatherName;
-	private String phoneNumber;
+	private String phoneNumber = "aaa";
 	private String gender;
 	private String maritalStatus;
 	private String address;
@@ -106,11 +110,10 @@ public class Patient implements Serializable {
 	
 	
 	public String Insert(){
-//		System.out.println("Chamou!");
-//		HibernateUtil hi =  new HibernateUtil();
-//		patientDao = new PatientDAO(hi.openSession());
-//		System.out.println("Abriu sessao!");
-//		patientDao.registerPatient(this);
+		System.out.println("Chamou!");
+		patientDao = new PatientDAO(HibernateUtil.openSession());
+		System.out.println("Abriu sessao!");
+		patientDao.registerPatient(this);
 		return "confCadPacientes";
 	}
 	

@@ -65,6 +65,10 @@
 				<h:inputText id="birth_date_field" value="#{patient.birthDate}" />
 				<br/>
 				<br/>
+				<h:outputLabel value="Telefone: " for="phone_field" />
+				<h:inputText id="phone_field" value="#{patient.phoneNumber}" />
+				<br/>
+				<br/>
 
 				<br/>
 				<h:commandButton action="#{patient.Insert}" value="Cadastrar paciente" />

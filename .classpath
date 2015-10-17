@@ -68,5 +68,10 @@
 	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/javax.faces-api-2.2.jar"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.36-bin.jar"/>
+	<classpathentry kind="lib" path="lib/c3p0-0.9.1-pre6.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate-java8-5.0.2.Final.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-common-jdbc-wrapper-src.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-common-jdbc-wrapper.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
