@@ -10,7 +10,6 @@ import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://localhost:8080/pep/confCadPacientes.xhtml") //so que nao
 public class ConfirmCreatePatientPage extends PageObject {
-
     @FindBy(name="nameReceived")
     private WebElement nameField;
     @FindBy(name="birthDateReceived")

@@ -11,8 +11,8 @@ import org.jbehave.core.model.ExamplesTable;
 
 import glorioso.pep.steps.ReceptionistSteps;
 
-public class CreatePatientStepDefinitions {
-
+public class CreatePatientStepDefinitions 
+{
     @Steps
     ReceptionistSteps receptionist;
 
