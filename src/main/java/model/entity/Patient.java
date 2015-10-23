@@ -1,4 +1,4 @@
-
+package model.entity;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,9 +6,6 @@ import java.util.Collection;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
-
-
-import model.entity.Contact;
 
 @DatabaseTable(tableName="patients")
 public class Patient implements java.io.Serializable {
