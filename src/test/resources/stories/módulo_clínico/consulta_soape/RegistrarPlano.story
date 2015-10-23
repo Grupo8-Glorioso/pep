@@ -1,14 +1,14 @@
-Registrar eventos na trilha de auditoria
+Registrar plano para um paciente
 
 Meta:
 @driver firefox 
 
 Narrative:
-In order to maintain an audit record
-As an administrator
-I Want to register the date, time, event type, user id, patient id (when applicable) of an event
+In order to register the plan for a patient
+As a doctor
+I want to register the conduct for the patient
 
-Scenario: Register event on audit record
-Given that a CRUD event was triggered by the user
-When the user checks the audit record
-Then they should see the previous triggered event
+Scenario: Register plan for 'José Silva'
+Given the doctor has determined a treatment plan for ‘Jose Silva’
+When the doctor register the conduct for the patient and comments
+Then the doctor should see a confirmation message

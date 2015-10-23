@@ -1,14 +1,14 @@
-Registrar eventos na trilha de auditoria
+Registrar a evolução de um paciente
 
 Meta:
 @driver firefox 
 
 Narrative:
-In order to maintain an audit record
-As an administrator
-I Want to register the date, time, event type, user id, patient id (when applicable) of an event
+In order to register a patient’s evolution
+As a doctor
+I want to register observations and comments
 
-Scenario: Register event on audit record
-Given that a CRUD event was triggered by the user
-When the user checks the audit record
-Then they should see the previous triggered event
+Scenario: Registering a patient’s evolution
+Given the doctor is interviewing a returning patient
+When the doctor inserts commentaries about the disease’s evolution
+Then the doctor should see a confirmation page

@@ -1,14 +1,14 @@
-Registrar eventos na trilha de auditoria
+Registrar informações do exame subjetivo
 
 Meta:
 @driver firefox 
 
 Narrative:
-In order to maintain an audit record
-As an administrator
-I Want to register the date, time, event type, user id, patient id (when applicable) of an event
+In order to register subjective information about a patient
+As a doctor
+I want to interview the patient and register the results 
 
-Scenario: Register event on audit record
-Given that a CRUD event was triggered by the user
-When the user checks the audit record
-Then they should see the previous triggered event
+Scenario: Interview 'Jose Silva'
+Given the doctor is interviewing 'Jose Silva'
+When the doctor registers the main complaint, medical history, symptoms, habits, prosthesis and comments
+Then the doctor should see a confirmation message
