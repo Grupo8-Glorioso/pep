@@ -64,21 +64,8 @@
 				<br/>
 
 				<br/>
-				<h:commandButton action="#{patientController.insert}" value="Cadastrar paciente" >
-					<f:param name="name" value="patient.name" />
-					<f:param name="gender" value="patient.gender" />
-					<f:param name="CPF" value="patient.CPF" />
-					<f:param name="motherName" value="patient.motherName" />
-					<f:param name="fatherName" value="patient.fatherName" />
-					<f:param name="address" value="patient.address" />
-					<f:param name="neighborhood" value="patient.neighborhood" />
-					<f:param name="birthPlace" value="patient.birthPlace" />
-					<f:param name="zipCode" value="patient.zipCode" />
-					<f:param name="maritalStatus" value="patient.maritalStatus" />
-					<f:param name="birthDate" value="patient.birthDate" />
-					<f:param name="phoneNumber" value="patient.phoneNumber" />
-				</h:commandButton>
-				
+				<h:commandButton action="#{patientController.insert(name, CPF, motherName, fatherName, address, neighborhood, birthPlace, zipCode, maritalStatus, birthDate, phoneNumber)}" value="Cadastrar paciente" />
+			
 				<br/>
 				<br/>		
 				

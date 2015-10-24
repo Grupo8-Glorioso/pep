@@ -11,17 +11,25 @@ import com.j256.ormlite.support.ConnectionSource;
 import glorioso.pep.model.entity.Patient;
 
 public class PatientController {
-	private Patient p;
+	private Patient p = new Patient();
 	
-	public Patient getP() {
-		return p;
-	}
-
-	public void setP(Patient p) {
-		this.p = p;
-	}
-
-	public void insert(Patient p) {
+	public void insert(String name, String CPF, 
+			String motherName, String fatherName, String address,
+			String neighborhood, String birthPlace, String zipCode,
+			String maritalStatus, String birthDate, String phoneNumber) {
+		p.setName(name);
+//		p.setGender(gender);
+		p.setCPF(CPF);
+		p.setMotherName(motherName);
+		p.setFatherName(fatherName);
+		p.setAddress(address);
+		p.setNeighborhood(neighborhood);
+		p.setBirthPlace(birthPlace);
+		p.setZipCode(zipCode);
+		p.setMaritalStatus(maritalStatus);
+		p.setBirthDate(birthDate);
+		p.setPhoneNumber(phoneNumber);
+		
 		try {
 			ConnectionSource cs = new JdbcConnectionSource("jdbc:sqlite:pep.db");
 			Dao<Patient,Integer> pd = DaoManager.createDao(cs, Patient.class);
