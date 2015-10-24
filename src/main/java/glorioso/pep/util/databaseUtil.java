@@ -1,6 +1,5 @@
 package glorioso.pep.util;
 
-import java.io.IOException;
 import java.sql.SQLException;
 
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
@@ -17,7 +16,7 @@ public class databaseUtil {
 			TableUtils.createTableIfNotExists(cs, Patient.class);
 			System.out.println("Initial database setup succesful!");
 			cs.close();
-		} catch (SQLException | IOException e) {
+		} catch (SQLException e) {
 			System.err.printf("Initial database setup failed (%s)", e.toString());
 			e.printStackTrace();
 		}

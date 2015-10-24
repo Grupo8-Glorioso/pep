@@ -1,6 +1,5 @@
 package glorioso.pep.model.control;
 
-import java.io.IOException;
 import java.sql.SQLException;
 
 import com.j256.ormlite.dao.Dao;
@@ -34,8 +33,8 @@ public class PatientController {
 			Dao<Patient,Integer> pd = DaoManager.createDao(cs, Patient.class);
 			pd.create(this.p);
 			cs.close();
-		} catch (SQLException | IOException e) {
-			System.err.printf("Patient insert failed (%s)", e.toString());
+		} catch (SQLException e) {
+			System.err.printf("Patient insert failed (%s)\n", e.toString());
 			e.printStackTrace();
 		}
 	}
