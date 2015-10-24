@@ -1,4 +1,4 @@
-package model.entity;
+package glorioso.pep.model.entity;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
