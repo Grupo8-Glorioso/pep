@@ -21,11 +21,11 @@ public class PatientController {
 		this.p = p;
 	}
 
-	public void insert() {
+	public void insert(Patient p) {
 		try {
 			ConnectionSource cs = new JdbcConnectionSource("jdbc:sqlite:pep.db");
 			Dao<Patient,Integer> pd = DaoManager.createDao(cs, Patient.class);
-			pd.create(this.p);
+			pd.create(p);
 			cs.close();
 		} catch (SQLException | IOException e) {
 			System.err.printf("Patient insert failed (%s)", e.toString());
