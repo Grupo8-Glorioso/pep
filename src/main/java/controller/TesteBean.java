@@ -10,7 +10,7 @@ public class TesteBean {
 	public String getText(){
 		return text;
 	}
-	
+
 	public String getMsg(){
 		return msg;
 	}

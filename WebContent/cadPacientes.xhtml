@@ -17,7 +17,7 @@
 				<br/>
 				<h:outputLabel value="Gênero: " for="gender_field" />
 				<h:selectOneMenu id="gender_field" value="#{patient.gender}">
-    				<f:selectItems value="#{patient.genders}" />
+    				<f:selectItems value="#{patient.gender}" />
 				</h:selectOneMenu>
 				<br/>
 				<br/>
@@ -64,11 +64,10 @@
 				<br/>
 
 				<br/>
-				<h:commandButton action="#{patient.createPatient}" value="Cadastrar paciente" />
-				
-				<br />
+				<h:commandButton action="#{patientController.insert(name, CPF, motherName, fatherName, address, neighborhood, birthPlace, zipCode, maritalStatus, birthDate, phoneNumber)}" value="Cadastrar paciente" />
+			
 				<br/>
-				
+				<br/>		
 				
 			</h:form>
 		</f:view>
