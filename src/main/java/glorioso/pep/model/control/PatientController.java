@@ -41,6 +41,21 @@ public class PatientController {
 		}
 	}
 	
+	public String read() {
+		Patient p = this.genPatient();
+		try {
+			ConnectionSource cs = new JdbcConnectionSource("jdbc:sqlite:pep.db");
+			Dao<Patient,Integer> pd = DaoManager.createDao(cs, Patient.class);
+			/* MONTAR A QUERY DO BANCO */
+			cs.close();
+			return "confReadPacientes";
+		} catch (SQLException e) {
+			System.err.printf("Patient read failed (%s)\n", e.toString());
+			e.printStackTrace();
+			return "error";
+		}
+	}
+	
 	public Patient genPatient() {
 		Patient p = new Patient();
 		p.setName(this.name);
