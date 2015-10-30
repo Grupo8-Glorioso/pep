@@ -10,5 +10,10 @@ I want register the given diagnosis after doing the objective and subjective exa
 
 Scenario: Register diagnosis of 'José Silva'
 Given the doctor has made the subjective and objective examinations of 'José Silva'
-When he registers the diagnosis, CID 10 code and comments
+When he registers the diagnosis, CID 10 code and comments:
+{transformer=FROM_LANDSPACE}
+|CID 10 code			|A90|
+|hipotesis diagnostic	|Dengue|
+|definitive diagnosis	||
+|comments				||
 Then the doctor should see a confirmation message

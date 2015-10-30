@@ -10,5 +10,8 @@ I want to register the conduct for the patient
 
 Scenario: Register plan for 'José Silva'
 Given the doctor has determined a treatment plan for ‘Jose Silva’
-When the doctor register the conduct for the patient and comments
+When the doctor register the conduct for the patient and comments:
+{transformer=FROM_LANDSPACE}
+|conduct	|Repouso e observação. Solicitado sorologia para dengue.| 
+|comments	||
 Then the doctor should see a confirmation message
