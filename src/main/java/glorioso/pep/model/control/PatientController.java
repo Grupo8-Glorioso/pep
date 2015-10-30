@@ -27,18 +27,25 @@ public class PatientController {
 	private String gender;
 	
 	public String insert() {
-		Patient p = this.genPatient();
-		try {
-			ConnectionSource cs = new JdbcConnectionSource("jdbc:sqlite:pep.db");
-			Dao<Patient,Integer> pd = DaoManager.createDao(cs, Patient.class);
-			pd.create(p);
-			cs.close();
-			return "confCadPacientes";
-		} catch (SQLException e) {
-			System.err.printf("Patient insert failed (%s)\n", e.toString());
-			e.printStackTrace();
-			return "error";
+		String result = verifyPatient(this.name, this.CPF, this.zipCode, this.phoneNumber);
+	
+		if (result == "ok") {
+			Patient p = this.genPatient();
+		
+			try {
+				ConnectionSource cs = new JdbcConnectionSource("jdbc:sqlite:pep.db");
+				Dao<Patient,Integer> pd = DaoManager.createDao(cs, Patient.class);
+				pd.create(p);
+				cs.close();
+				result = "confCadPacientes";
+			} catch (SQLException e) {
+				System.err.printf("Patient insert failed (%s)\n", e.toString());
+				e.printStackTrace();
+				result = "error";
+			}
 		}
+		
+		return result;
 	}
 	
 	public String read() {
@@ -54,6 +61,20 @@ public class PatientController {
 			e.printStackTrace();
 			return "error";
 		}
+	}
+	
+	public String verifyPatient(String name, String cpf, String zipCode, String phoneNumber){
+		if (name == ""){
+			return "name";
+		} else if (cpf.length() != 11){
+			return "cpf";
+		} else if (zipCode.length() != 9){
+			return "zipCode";
+		} else if (phoneNumber.length() != 11){
+			return "phoneNumber";
+		}
+		 
+		return "ok";
 	}
 	
 	public Patient genPatient() {
@@ -80,6 +101,16 @@ public class PatientController {
 	    genVal.add(new String("Outro"));
 	    return genVal;
 	} 
+	
+	public List<String> getMaritalStatuss(){
+		List<String> msVal = new ArrayList<String>();
+		msVal.add(new String("Solteiro(a)"));
+		msVal.add(new String("Casado(a)"));
+		msVal.add(new String("Viúvo(a)"));
+		msVal.add(new String("Divorciado(a)"));
+	    
+	    return msVal;
+	}
 
 	public String getName() {
 		return name;
@@ -175,5 +206,9 @@ public class PatientController {
 
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+	
+	public static boolean isNumeric(String str) {
+	    return str.matches("-?\\d+(.\\d+)?");
 	}
 }

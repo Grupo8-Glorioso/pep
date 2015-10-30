@@ -9,8 +9,6 @@
 		<f:view>
 			<h:form id="form">
 				<h3>Cadastro de pacientes</h3>
-				
-				
 				<h:outputLabel value="Nome: " for="name_field" />
 				<h:inputText id="name_field" value="#{patientController.name}" />
 				<br/>
@@ -50,8 +48,10 @@
 				<h:inputText id="zipcode_field" value="#{patientController.zipCode}" />
 				<br/>
 				<br/>
-				<h:outputLabel value="Estado Civil: " for="marital_status_field" />
-				<h:inputText id="marital_status_field" value="#{patientController.maritalStatus}" />
+				<h:outputLabel value="Estado Civil: " for="matiral_status_field" />
+				<h:selectOneMenu id="marital_status_field" value="#{patientController.maritalStatus}">
+    				<f:selectItems value="#{patientController.maritalStatuss}" />
+				</h:selectOneMenu>
 				<br/>
 				<br/>
 				<h:outputLabel value="Data de Nascimento: " for="birth_date_field" />
