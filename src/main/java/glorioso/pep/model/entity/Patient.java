@@ -109,7 +109,7 @@ public class Patient implements Serializable {
 	private List<Contact> contactList = new ArrayList<Contact>();
 	
 	
-	public String Insert(){
+	public String Insert(int aishoaios){
 		System.out.println("Chamou!");
 		patientDao = new PatientDAO(HibernateUtil.openSession());
 		System.out.println("Abriu sessao!");
