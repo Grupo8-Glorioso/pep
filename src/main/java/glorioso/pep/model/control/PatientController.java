@@ -32,7 +32,7 @@ public class PatientController {
 	
 	public String insert() {
 		String result = verifyPatient(this.name, this.CPF, this.zipCode, this.phoneNumber);
-	
+		System.out.println(result);
 		if (result == "ok") {
 			Patient p = this.genPatient();
 		
@@ -64,7 +64,7 @@ public class PatientController {
 				n++;
 				where.eq("name", this.name);
 			}
-			if (this.address != "") {
+			if (this.CPF != "") {
 				n++;
 				where.eq("CPF", this.CPF);
 			}
@@ -108,14 +108,19 @@ public class PatientController {
 				n++;
 				where.eq("gender", this.gender);
 			}
-			if (n == 0)
+			if (n == 0){
+				System.out.println(n);
 				return "emptyRead";
-			
+			}
 			where.and(n);
 			patientList = where.query();
 			
+			for (Patient p: patientList){
+				System.out.println(p.getName());
+			}
+			
 			cs.close();
-			return "confReadPacientes";
+			return "confReadPacients";
 		} catch (SQLException e) {
 			System.err.printf("Patient read failed (%s)\n", e.toString());
 			e.printStackTrace();
@@ -128,7 +133,7 @@ public class PatientController {
 			return "name";
 		} else if (cpf.length() != 11){
 			return "cpf";
-		} else if (zipCode.length() != 9){
+		} else if (zipCode.length() != 8){
 			return "zipCode";
 		} else if (phoneNumber.length() != 11){
 			return "phoneNumber";
@@ -160,6 +165,7 @@ public class PatientController {
 	
 	public List<String> getGenders() {
 	    List<String> genVal = new ArrayList<String>();
+	    genVal.add(new String(""));
 	    genVal.add(new String("Masculino"));
 	    genVal.add(new String("Feminino"));
 	    genVal.add(new String("Outro"));
@@ -168,6 +174,7 @@ public class PatientController {
 	
 	public List<String> getMaritalStatuss(){
 		List<String> msVal = new ArrayList<String>();
+		msVal.add(new String(""));
 		msVal.add(new String("Solteiro(a)"));
 		msVal.add(new String("Casado(a)"));
 		msVal.add(new String("Viúvo(a)"));
