@@ -108,15 +108,11 @@ public class PatientController {
 				n++;
 				where.eq("gender", this.gender);
 			}
-			if (n == 0){
-				System.out.println(n);
-				return "emptyRead";
-			}
-			where.and(n);
-			patientList = where.query();
-			
-			for (Patient p: patientList){
-				System.out.println(p.getName());
+			if (n == 0) {
+				patientList = pd.queryForAll();
+			} else {
+				where.and(n);
+				patientList = where.query();
 			}
 			
 			cs.close();
