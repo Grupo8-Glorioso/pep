@@ -1,6 +1,8 @@
 package glorioso.pep.model.control;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
@@ -22,6 +24,7 @@ public class PatientController {
 	private String maritalStatus;
 	private String birthDate;
 	private String phoneNumber;
+	private String gender;
 	
 	public String insert() {
 		Patient p = this.genPatient();
@@ -51,8 +54,17 @@ public class PatientController {
 		p.setMaritalStatus(this.maritalStatus);
 		p.setBirthDate(this.birthDate);
 		p.setPhoneNumber(this.phoneNumber);
+		p.setGender(this.gender);
 		return p;
 	}
+	
+	public List<String> getGenders() {
+	    List<String> genVal = new ArrayList<String>();
+	    genVal.add(new String("Masculino"));
+	    genVal.add(new String("Feminino"));
+	    genVal.add(new String("Outro"));
+	    return genVal;
+	} 
 
 	public String getName() {
 		return name;
@@ -140,5 +152,13 @@ public class PatientController {
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 }
