@@ -7,6 +7,8 @@ import java.util.List;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
+import com.j256.ormlite.stmt.QueryBuilder;
+import com.j256.ormlite.stmt.Where;
 import com.j256.ormlite.support.ConnectionSource;
 
 import glorioso.pep.model.entity.Patient;
@@ -25,6 +27,8 @@ public class PatientController {
 	private String birthDate;
 	private String phoneNumber;
 	private String gender;
+	
+	private List<Patient> patientList;
 	
 	public String insert() {
 		String result = verifyPatient(this.name, this.CPF, this.zipCode, this.phoneNumber);
@@ -49,11 +53,67 @@ public class PatientController {
 	}
 	
 	public String read() {
-		Patient p = this.genPatient();
 		try {
 			ConnectionSource cs = new JdbcConnectionSource("jdbc:sqlite:pep.db");
 			Dao<Patient,Integer> pd = DaoManager.createDao(cs, Patient.class);
-			/* MONTAR A QUERY DO BANCO */
+			QueryBuilder<Patient,Integer> qb = pd.queryBuilder();
+			Where<Patient,Integer> where = qb.where();
+			
+			int n = 0;
+			if (this.address != "") {
+				n++;
+				where.eq("name", this.name);
+			}
+			if (this.address != "") {
+				n++;
+				where.eq("CPF", this.CPF);
+			}
+			if (this.motherName != "") {
+				n++;
+				where.eq("motherName", this.motherName);
+			}
+			if (this.fatherName != "") {
+				n++;
+				where.eq("fatherName", this.fatherName);
+			}
+			if (this.address != "") {
+				n++;
+				where.eq("address", this.address);
+			}
+			if (this.neighborhood != "") {
+				n++;
+				where.eq("neighborhood", this.neighborhood);
+			}
+			if (this.birthPlace != "") {
+				n++;
+				where.eq("birthPlace", this.birthPlace);
+			}
+			if (this.zipCode != "") {
+				n++;
+				where.eq("zipCode", this.zipCode);
+			}
+			if (this.maritalStatus != "") {
+				n++;
+				where.eq("maritalStatus", this.maritalStatus);
+			}
+			if (this.birthDate != "") {
+				n++;
+				where.eq("birthDate", this.birthDate);
+			}
+			if (this.phoneNumber != "") {
+				n++;
+				where.eq("phoneNumber", this.phoneNumber);
+			}
+			if (this.gender != "") {
+				n++;
+				where.eq("gender", this.gender);
+			}
+			if (n == 0)
+				return "emptyRead";
+			
+			where.and(n);
+			patientList = where.query();
+			
 			cs.close();
 			return "confReadPacientes";
 		} catch (SQLException e) {
@@ -75,6 +135,10 @@ public class PatientController {
 		}
 		 
 		return "ok";
+}
+
+	public List<Patient> getPatientList() {
+		return this.patientList;
 	}
 	
 	public Patient genPatient() {
