@@ -1,3 +1,7 @@
+html,body {
+    height:100%;
+}
+
 .nav {
 	position:fixed;
 	margin-top:0px;
@@ -21,13 +25,17 @@
 }*/
 
 .left {
-	
-	
 	float: left;
 	width: 120px;
-	height: 105vh;
+	/*height: 105vh;*/
+	height:100%;
 	background-color: #B9D7D9;
 	border: 2px solid #000ff0;
+}
+
+.right {
+	border: 2px solid #00ffff;
+	height:100%;
 }
 
 .nav div {
@@ -48,5 +56,5 @@
 
 #master{
 	border: 2px solid #ffff00;
-	
+	height:100%;
 }
