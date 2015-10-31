@@ -14,12 +14,12 @@ public class ReadPatientStepDefinitions {
 
     @Given("the user is on the patient search page")
     public void givenTheUserIsOnThePatientReadForm() {
-    	receptionist.is_on_the_patient_creation_form();
+    	receptionist.isOnThePatientCreationForm();
     }
 
     @When("the user searches for '$name'")
     public void whenTheUserSearchesForName(String name) {
-    	receptionist.search_for_patient(name);
+    	receptionist.searchForPatient(name);
     }
     
     //@When("the user fills and submits '$age' and '$marital_status'")

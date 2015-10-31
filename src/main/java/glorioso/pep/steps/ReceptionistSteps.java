@@ -16,7 +16,7 @@ public class ReceptionistSteps extends ScenarioSteps
 	ConfirmCreatePatientPage confirmPatientPage;
 
     @Step
-	public void fill_and_submit_create_form(String name, String birthDate, String maritalStatus, String phone,
+	public void fillAndSubmitCreateForm(String name, String birthDate, String maritalStatus, String phone,
 								String address, String neighborhood, String zipcode, String birthPlace, 
 								String fatherName, String motherName, String cpf, String gender) 
     {
@@ -26,12 +26,12 @@ public class ReceptionistSteps extends ScenarioSteps
     }
 
     @Step
-    public void is_on_the_patient_creation_form() {
+    public void isOnThePatientCreationForm() {
         createPatientFormPage.open();
     }
 
     @Step
-    public void should_see_confirmation_page(String name, String birthDate, String maritalStatus, String phone,
+    public void shouldSeeConfirmationPage(String name, String birthDate, String maritalStatus, String phone,
 			String address, String neighborhood, String zipcode, String birthPlace, 
 			String fatherName, String motherName, String cpf, String gender) {
        confirmPatientPage.confirm( name,  birthDate,  maritalStatus,  phone,
@@ -40,25 +40,25 @@ public class ReceptionistSteps extends ScenarioSteps
     }
     
     @Step
-	public void is_on_the_patient_update_form() {
+	public void isOnThePatientUpdateForm() {
 		updatePatientFormPage.open();
 	}
 
     @Step
-	public void update_and_submit(String field, String info) {
+	public void updateAndSubmit(String field, String info) {
         updatePatientFormPage.fill(field, info);
         updatePatientFormPage.submit();
 	}
 
     @Step
-	public void should_see_confirmation_page_field_info(String field,
+	public void shouldSeeConfirmationPageFieldInfo(String field,
 			String info) {
 		assert(updatePatientFormPage.getConfirmedField() == field);
 		assert(updatePatientFormPage.getConfirmedInfo() == info);
 	}
     
     @Step
-    public void search_for_patient(String name)
+    public void searchForPatient(String name)
     {
     	assert(false == true);
     }

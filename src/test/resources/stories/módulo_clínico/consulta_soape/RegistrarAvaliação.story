@@ -12,7 +12,7 @@ Scenario: Register diagnosis of 'José Silva'
 Given the doctor has made the subjective and objective examinations of 'José Silva'
 When he registers the diagnosis, CID 10 code and comments:
 {transformer=FROM_LANDSPACE}
-|CID 10 code			|A90|
+|code CID 10			|A90|
 |hipotesis diagnostic	|Dengue|
 |definitive diagnosis	||
 |comments				||
