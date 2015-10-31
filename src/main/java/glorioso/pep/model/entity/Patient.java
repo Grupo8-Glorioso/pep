@@ -4,18 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
+//import glorioso.pep.model.dao.PatientDAO;
 
-import glorioso.pep.model.dao.PatientDAO;
-import glorioso.pep.util.HibernateUtil;
-
-@Entity
 public class Patient implements Serializable {
 		
 	// necessario para o eclipse nao reclamar
 	private static final long serialVersionUID = 2L;
 	
-	private PatientDAO patientDao;
+	//private PatientDAO patientDao;
 	
 	public long getIdPatient() {
 		return idPatient;
@@ -65,7 +61,7 @@ public class Patient implements Serializable {
 	public void setCPF(String cPF) {
 		CPF = cPF;
 	}
-	
+	/*
 	public List<Contact> getContactList() {
 		return contactList;
 	}
@@ -86,7 +82,7 @@ public class Patient implements Serializable {
 	}
 	public List<String> getContactTypes(){
 		return c.getTypes();
-	}
+	}*/
 	
 	
 	private long idPatient;
@@ -105,22 +101,22 @@ public class Patient implements Serializable {
 	private String birthDate;
 	private String CPF;
 	
-	private Contact c = new Contact();
-	private List<Contact> contactList = new ArrayList<Contact>();
+	//private Contact c = new Contact();
+	//private List<Contact> contactList = new ArrayList<Contact>();
 	
 	
 	public String Insert(int aishoaios){
 		System.out.println("Chamou!");
-		patientDao = new PatientDAO(HibernateUtil.openSession());
+		//patientDao = new PatientDAO(HibernateUtil.openSession());
 		System.out.println("Abriu sessao!");
-		patientDao.registerPatient(this);
+		//patientDao.registerPatient(this);
 		return "confCadPacientes";
 	}
 	
 	public void CreateContact(){
-		System.out.println("Mensagem recebida: " + c.getType() + " - " + c.getInfo());
-		contactList.add(c);
-		System.out.println(contactList);
+		//System.out.println("Mensagem recebida: " + c.getType() + " - " + c.getInfo());
+		//contactList.add(c);
+		//System.out.println(contactList);
 		//contactList.add(contact);
 	}
 	public String getFatherName() {

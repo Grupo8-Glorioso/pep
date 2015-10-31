@@ -2,11 +2,7 @@ package glorioso.pep.model.dao;
 
 import java.util.List;
 
-import org.hibernate.Transaction;
-
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-
+/*
 import glorioso.pep.model.entity.Contact;
 import glorioso.pep.model.entity.Patient;
 
@@ -37,4 +33,4 @@ public class PatientDAO {
 			return false;
 		}
 	}
-}
+}*/
