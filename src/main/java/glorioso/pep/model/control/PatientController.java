@@ -60,7 +60,7 @@ public class PatientController {
 			Where<Patient,Integer> where = qb.where();
 			
 			int n = 0;
-			if (this.address != "") {
+			if (this.name != "") {
 				n++;
 				where.eq("name", this.name);
 			}
