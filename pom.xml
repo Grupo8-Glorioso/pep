@@ -24,7 +24,7 @@
         <id>central</id>
         <name>bintray</name>
         <url>http://jcenter.bintray.com</url>
-      </repository>     
+      </repository>
     <repository>
         <id>maven2-repository.dev.java.net</id>
         <name>Java.net Repository for Maven</name>
@@ -43,15 +43,12 @@
     </pluginRepositories>
 
     <dependencies>
-    
+
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
 			<version>2.1.7</version>
 		</dependency>
-
-
-                <!-- Tomcat 6 need this --> 
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
@@ -146,7 +143,7 @@
         </dependency>
     </dependencies>
     <build>
-        <plugins>                    
+        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
