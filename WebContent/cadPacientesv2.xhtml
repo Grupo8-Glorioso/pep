@@ -40,68 +40,111 @@
 		  	<f:view>
 		  		<h:form id="form">
 					<h1 class="page-header">Cadastro de pacientes</h1>
-					<h:outputLabel value="Nome: " for="name_field" />
+					<!--<h:outputLabel value="Nome: " for="name_field" />
 						
-					<h:inputText id="name_field" value="#{patientController.name}" />	
-					<!--<div class="input-group">
+					<h:inputText id="name_field" value="#{patientController.name}" /> -->
+					<div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1">Nome: </span>
-					  <input type="text" class="form-control" placeholder="Nome" aria-describedby="basic-addon1" id="name_field" value="#{patientController.name}" />
-					</div>-->
+					  <input type="text" class="form-control" placeholder="Nome" aria-describedby="basic-addon1" 
+					  id="name_field" value="#{patientController.name}" />
+					</div>
 						
-					<br/>
 					<br/>
 					<h:outputLabel value="Gênero: " for="gender_field" />
 					<h:selectOneMenu id="gender_field" value="#{patientController.gender}">
 	    				<f:selectItems value="#{patientController.genders}" />
 					</h:selectOneMenu>
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Gênero: </span>
+					  <input type="text" class="form-control" placeholder="Genero" aria-describedby="basic-addon1" 
+					  id="cpf_field" value="#{patientController.CPF}" /> 
+					</div>
 					<br/>
+					<!-- <h:outputLabel value="CPF:" for="cpf_field" />
+					<h:inputText id="cpf_field" value="#{patientController.CPF}" /> -->
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">CPF: </span>
+					  <input type="text" class="form-control" placeholder="CPF" aria-describedby="basic-addon1" 
+					  id="cpf_field" value="#{patientController.CPF}" /> 
+					</div>
 					<br/>
-					<h:outputLabel value="CPF:" for="cpf_field" />
-					<h:inputText id="cpf_field" value="#{patientController.CPF}" />
-					<br/>
-					<br/>
-					<h:outputLabel value="Nome da mãe: " for="mother_name_field" />
-					<h:inputText id="mother_name_field" value="#{patientController.motherName}" />
+					<!--<h:outputLabel value="Nome da mãe: " for="mother_name_field" />
+					<h:inputText id="mother_name_field" value="#{patientController.motherName}" />-->
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Nome da mãe: </span>
+					  <input type="text" class="form-control" placeholder="Nome da mãe" aria-describedby="basic-addon1" 
+					  id="mother_name_field" value="#{patientController.motherName}" />
+					</div>
 					<br />
-					<br />
-	
-					<h:outputLabel value="Nome do pai: " for="father_name_field" />
-					<h:inputText id="father_name_field" value="#{patientController.fatherName}" />
-					<br/>
+					<!--<h:outputLabel value="Nome do pai: " for="father_name_field" />
+					<h:inputText id="father_name_field" value="#{patientController.fatherName}" />-->
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Nome da pai: </span>
+					  <input type="text" class="form-control" placeholder="Nome da pai" aria-describedby="basic-addon1" 
+					  id="father_name_field" value="#{patientController.fatherName}" />
+					</div>
 					<br/>				
-					<h:outputLabel value="Endereço: " for="address_field" />
-					<h:inputText id="address_field" value="#{patientController.address}" />
+					<!--<h:outputLabel value="Endereço: " for="address_field" />
+					<h:inputText id="address_field" value="#{patientController.address}" />-->
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Endereço: </span>
+					  <input type="text" class="form-control" placeholder="Endereço" aria-describedby="basic-addon1" 
+					  id="address_field" value="#{patientController.address}" />
+					</div>
 					<br/>
+					<!--<h:outputLabel value="Bairro: " for="neighborhood_field" />
+					<h:inputText id="neighborhood_field" value="#{patientController.neighborhood}" />-->
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Bairro: </span>
+					  <input type="text" class="form-control" placeholder="Bairro" aria-describedby="basic-addon1" 
+					  id="neighborhood_field" value="#{patientController.neighborhood}" />
+					</div>
 					<br/>
-					<h:outputLabel value="Bairro: " for="neighborhood_field" />
-					<h:inputText id="neighborhood_field" value="#{patientController.neighborhood}" />
+					<!--<h:outputLabel value="Cidade Natal: " for="birth_place_field" />
+					<h:inputText id="birth_place_field" value="#{patientController.birthPlace}" />-->
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Cidade Natal: </span>
+					  <input type="text" class="form-control" placeholder="Cidade Natal" aria-describedby="basic-addon1" 
+					  id="birth_place_field" value="#{patientController.birthPlace}" />
+					</div>
 					<br/>
+					<!--<h:outputLabel value="CEP: " for="zipcode_field" />
+					<h:inputText id="zipcode_field" value="#{patientController.zipCode}" />-->
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">CEP: </span>
+					  <input type="text" class="form-control" placeholder="CEP" aria-describedby="basic-addon1" 
+					  id="zipcode_field" value="#{patientController.zipCode}" />
+					</div>
 					<br/>
-					<h:outputLabel value="Cidade Natal: " for="birth_place_field" />
-					<h:inputText id="birth_place_field" value="#{patientController.birthPlace}" />
+					<!--<h:outputLabel value="Estado Civil: " for="marital_status_field" />
+					<h:inputText id="marital_status_field" value="#{patientController.maritalStatus}" />-->
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Estado Civil: </span>
+					  <input type="text" class="form-control" placeholder="Estado Civil" aria-describedby="basic-addon1" 
+					  id="marital_status_field" value="#{patientController.maritalStatus}" />
+					</div>
 					<br/>
+					<!--<h:outputLabel value="Data de Nascimento: " for="birth_date_field" />
+					<h:inputText id="birth_date_field" value="#{patientController.birthDate}" />-->
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Data de Nascimento: </span>
+					  <input type="text" class="form-control" placeholder="Data de Nascimento" aria-describedby="basic-addon1" 
+					  id="birth_date_field" value="#{patientController.birthDate}" />
+					</div>
 					<br/>
-					<h:outputLabel value="CEP: " for="zipcode_field" />
-					<h:inputText id="zipcode_field" value="#{patientController.zipCode}" />
-					<br/>
-					<br/>
-					<h:outputLabel value="Estado Civil: " for="marital_status_field" />
-					<h:inputText id="marital_status_field" value="#{patientController.maritalStatus}" />
-					<br/>
-					<br/>
-					<h:outputLabel value="Data de Nascimento: " for="birth_date_field" />
-					<h:inputText id="birth_date_field" value="#{patientController.birthDate}" />
-					<br/>
-					<br/>
-					<h:outputLabel value="Telefone: " for="phone_field" />
-					<h:inputText id="phone_field" value="#{patientController.phoneNumber}" />
-					<br/>
+					<!--<h:outputLabel value="Telefone: " for="phone_field" />
+					<h:inputText id="phone_field" value="#{patientController.phoneNumber}" />-->
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Telefone: </span>
+					  <input type="text" class="form-control" placeholder="Telefone" aria-describedby="basic-addon1" 
+					  id="phone_field" value="#{patientController.phoneNumber}" />
+					</div>
 					<br/>
 	
 					<br/>
 
-					<h:commandButton action="#{patientController.insert}" value="Cadastrar novo paciente"/>				
-					<h:commandButton action="#{patientController.read}" value="Consultar paciente"/>		
+					<h:commandButton id="btnInsert" action="#{patientController.insert}" value="Cadastrar novo paciente"/>				
+					<h:commandButton id="btnConsult" action="#{patientController.read}" value="Consultar paciente"/>		
 
 					<br />
 					<br/>
