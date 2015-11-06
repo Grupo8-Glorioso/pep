@@ -18,14 +18,14 @@ public class CreatePatientStepDefinitions
 
     @Given("the user is creating a patient")
     public void givenTheUserIsOnThePatientCreationForm() {
-    	receptionist.is_on_the_patient_creation_form();
+    	receptionist.isOnThePatientCreationForm();
     }
 
     @When("the user enters and submits the patient information: $patient_table")
     public void whenTheUserFillsAndSubmitsTheFormWithInformationFrom(ExamplesTable patientTable) 
     {
     	Map<String, String> patient = patientTable.getRow(0);
-    	receptionist.fill_and_submit_create_form(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
+    	receptionist.fillAndSubmitCreateForm(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
     								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
     								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
     								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
@@ -34,7 +34,7 @@ public class CreatePatientStepDefinitions
     @Then("they should see a confirmation of the creation of: $patient_table")
     public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(ExamplesTable patientTable) {
     	Map<String, String> patient = patientTable.getRow(0);
-    	receptionist.should_see_confirmation_page(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
+    	receptionist.shouldSeeConfirmationPage(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
     								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
     								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
     								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));

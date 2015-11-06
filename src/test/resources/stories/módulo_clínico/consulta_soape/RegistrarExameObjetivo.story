@@ -15,11 +15,11 @@ When the doctor inserts test data:
 |height					|1,63m|								|
 |weight					|70kg|
 |temperature			|37,7ºC|
-|blood pressure			|135/90mmHg|
-|heart rate				|72/min|		
-|breathing rate			|17/min|
-|SatO2					|96%|
-|SatCO2 				||
+|blood_pressure			|135/90mmHg|
+|heart_rate				|72/min|		
+|breathing_rate			|17/min|
+|satO2					|96%|
+|satCO2 				||
 |glycemia				|88mg/dL|
 |comments				|Mialgia generalizada. Febrícula|
 Then the doctor should see a confirmation message
