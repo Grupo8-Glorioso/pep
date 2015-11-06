@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl("http://www.google.com") //so que nao
+@DefaultUrl("http://localhost:8080/pep/updatePatient.xhtml") //inexistente
 public class UpdatePatientFormPage extends PageObject {
 
     @FindBy(name="name_field")
