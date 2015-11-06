@@ -70,6 +70,17 @@ public class DoctorSteps extends ScenarioSteps {
 	public void confirmationSubjectiveInfo() {
 		registerSubjectiveTestFormPage.containsText(" ");
 	}
+	
+	@Step
+	public void isOnThePatientObjectiveForm() {
+		registerObjectiveTestFormPage.open();
+	}
+	
+	@Step
+	public void confirmationObjectiveInfo() {
+		registerObjectiveTestFormPage.containsText(" ");
+	}
+	
 
 	@Step
 	public void isOnThePatientEvolutionForm() {
