@@ -1,36 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
- <managed-bean>
-  <managed-bean-name>patient</managed-bean-name>
-  <managed-bean-class>glorioso.pep.model.entity.Patient</managed-bean-class>
-  <managed-bean-scope>request</managed-bean-scope>
- </managed-bean>
- <managed-bean>
-  <managed-bean-name>testeBean</managed-bean-name>
-  <managed-bean-class>controller.TesteBean</managed-bean-class>
-  <managed-bean-scope>request</managed-bean-scope>
- </managed-bean>
- <managed-bean>
-  <managed-bean-name>contact</managed-bean-name>
-  <managed-bean-class>glorioso.pep.model.entity.Contact</managed-bean-class>
-  <managed-bean-scope>request</managed-bean-scope>
-  <managed-property>
-   <property-name>info</property-name>
-   <property-class>java.lang.String</property-class>
-   <value/>
-  </managed-property>
-  <managed-property>
-   <property-name>type</property-name>
-   <property-class>java.lang.String</property-class>
-   <value/>
-  </managed-property>
-  <managed-property>
-   <property-name>types</property-name>
-   <property-class>java.util.List</property-class>
-   <value/>
-  </managed-property>
- </managed-bean>
+	<managed-bean>
+		<managed-bean-name>patientController</managed-bean-name>
+		<managed-bean-class>glorioso.pep.model.control.PatientController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>patient</managed-bean-name>
+		<managed-bean-class>glorioso.pep.model.entity.Patient</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
  <navigation-rule>
   <from-view-id>/index.xhtml</from-view-id>
   <navigation-case>
