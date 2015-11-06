@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14456468760750" configfile="/pep/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="178" id="pf14456469181211" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14456469181212" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="confirmation.xhtml" x="338" y="178" id="pf14456469181213" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14456469181212" path="/confirmation.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadPacientes.xhtml" x="97" y="312" id="pf14456469181214" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14456469181215" path="/cadPacientes.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="confCadPacientes.xhtml" x="338" y="312" id="pf14456469181216" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14456469181215" path="/confCadPacientes.xhtml"/>
+  <links id="pf14456469181212" target="pf14456469181213" source="pf14456469181211" outcome="confirmation"/>
+  <links id="pf14456469181215" target="pf14456469181216" source="pf14456469181214" outcome="confCadPacientes"/>
+</pageflow:Pageflow>

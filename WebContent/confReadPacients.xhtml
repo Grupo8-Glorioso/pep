@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<h:head>
+		<title>PEP</title>
+	</h:head>
+	<h:body>
+		<f:view>
+			<h:dataTable value="#{patientController.patientList}" var="p">
+				<h:column>#{p.name}</h:column>
+				<h:column>#{p.CPF}</h:column>
+				<h:column>#{p.gender}</h:column>
+				<h:column>#{p.motherName}</h:column>
+				<h:column>#{p.fatherName}</h:column>
+				<h:column>#{p.address}</h:column>
+				<h:column>#{p.neighborhood}</h:column>
+				<h:column>#{p.birthPlace}</h:column>
+				<h:column>#{p.zipCode}</h:column>
+				<h:column>#{p.maritalStatus}</h:column>
+				<h:column>#{p.birthDate}</h:column>
+				<h:column>#{p.phoneNumber}</h:column>
+			</h:dataTable>
+		</f:view>
+	</h:body>
+
+</html>
