@@ -16,28 +16,20 @@ public class PresentDemographicsStepDefinitions
     @Steps
     ReceptionistSteps receptionist;
 
-//    @Given("the user is creating a patient")
-//    public void givenTheUserIsOnThePatientCreationForm() {
-//    	receptionist.is_on_the_patient_creation_form();
-//    }
-//
-//    @When("the user enters and submits the patient information: $patient_table")
-//    public void whenTheUserFillsAndSubmitsTheFormWithInformationFrom(ExamplesTable patientTable) 
-//    {
-//    	Map<String, String> patient = patientTable.getRow(0);
-//    	receptionist.fill_and_submit_create_form(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
-//    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
-//    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-//    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
-//    }
-//
-//    @Then("they should see a confirmation of the creation of: $patient_table")
-//    public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(ExamplesTable patientTable) {
-//    	Map<String, String> patient = patientTable.getRow(0);
-//    	receptionist.should_see_confirmation_page(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
-//    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
-//    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-//    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
-//    }
+    @Given("the receptionist is on the patient search page")
+    public void givenTheRecepcionistIsOnThePatientSearchPageForm() {
+    	//receptionist.isOnThePatientSearchPageForm();
+    }
+    
+    @When("she finds and selects '$name'")
+    public void whenTheRecepcionistSelectThePatient(String name) {
+    	//doctor.remove_and_submit(name);
+    }
+    
+    @Then("she should be directed to the page with the demographic data of '$name'")
+    // @Alias("they should see a confirmation of the creation of <name>")
+    public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(String name) {
+    	//receptionist.should_see_confirmation_page(name);
+    }
 
 }

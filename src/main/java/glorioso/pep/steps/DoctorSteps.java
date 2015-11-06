@@ -68,7 +68,25 @@ public class DoctorSteps extends ScenarioSteps {
 
 	@Step
 	public void confirmationSubjectiveInfo() {
-		registerSubjectiveTestFormPage.containsText("");
+		registerSubjectiveTestFormPage.containsText(" ");
+	}
+
+	@Step
+	public void isOnThePatientEvolutionForm() {
+		registerEvolutionFormPage.open();
+	}
+	
+	@Step
+	public void confirmationEvolutionInfo() {
+		registerSubjectiveTestFormPage.containsText(" ");
+	}
+
+	public void isOnThePatientPlanForm() {
+		registerPlanFormPage.open();
+	}
+
+	public void confirmationPlanInfo() {
+		registerSubjectiveTestFormPage.containsText(" ");
 	}
 	
 	@Step
