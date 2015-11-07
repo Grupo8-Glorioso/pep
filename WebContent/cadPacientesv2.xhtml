@@ -74,11 +74,12 @@
 						<br/>
 		
 						<br/>
-						<h:commandButton action="#{patientController.insert}" value="Cadastrar novo paciente"/>				
-						<h:commandButton action="#{patientController.read}" value="Consultar paciente"/>		
+						<h:commandButton action="#{patientController.insert}" id="submit_button" value="Cadastrar novo paciente"/>				
+						<h:commandButton action="#{patientController.read}" id="read_button" value="Consultar paciente"/>			
 						<br />
 						<br/>
 						
+						<h:outputLabel id="error_label_field" value="#{patientController.errorLabel}" />
 						
 					</h:form>
 				</f:view>

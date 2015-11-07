@@ -1,11 +1,9 @@
 package glorioso.pep.pages;
 
-import net.thucydides.core.annotations.DefaultUrl;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://localhost:8080/pep/confCadPacientes.xhtml")

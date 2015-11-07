@@ -30,7 +30,11 @@ public class PatientController {
 	
 	private List<Patient> patientList;
 	
+	private String errorLabel;
+	
 	public String insert() {
+		setErrorLabel("");
+		
 		String result = verifyPatient(this.name, this.CPF, this.zipCode, this.phoneNumber);
 		System.out.println(result);
 		if (result == "ok") {
@@ -39,16 +43,31 @@ public class PatientController {
 			try {
 				ConnectionSource cs = new JdbcConnectionSource("jdbc:sqlite:pep.db");
 				Dao<Patient,Integer> pd = DaoManager.createDao(cs, Patient.class);
-				pd.create(p);
+				
+				QueryBuilder<Patient,Integer> qb = pd.queryBuilder();
+				Where<Patient,Integer> where = qb.where();
+				
+				where.eq("CPF", p.getCPF());
+				List<Patient> existsPatient = where.query();
+				
+				if (!existsPatient.isEmpty()){
+					errorLabel = "Já existe esse usuário";
+				} else {
+					pd.create(p);
+					result = "confCadPacientes";
+				}
+				
 				cs.close();
-				result = "confCadPacientes";
 			} catch (SQLException e) {
 				System.err.printf("Patient insert failed (%s)\n", e.toString());
 				e.printStackTrace();
-				result = "error";
+				errorLabel = "Erro no banco";
 			}
+		} else {
+			errorLabel = result;
 		}
 		
+		System.out.println("O QUE ESTA RETORNANDO:" + result);
 		return result;
 	}
 	
@@ -125,18 +144,20 @@ public class PatientController {
 	}
 	
 	public String verifyPatient(String name, String cpf, String zipCode, String phoneNumber){
-		if (name == ""){
-			return "name";
-		} else if (cpf.length() != 11){
-			return "cpf";
-		} else if (zipCode.length() != 8){
-			return "zipCode";
-		} else if (phoneNumber.length() != 11){
-			return "phoneNumber";
-		}
+		String result = "ok";
+		
+//		if (name == ""){
+//			result = "Coloque um nome";
+//		} else if (cpf.length() != 11){
+//			result = "CPF Invalido";
+//		} else if (zipCode.length() != 8){
+//			result = "CEP Invalido";
+//		} else if (phoneNumber.length() != 11){
+//			result = "Telefone Invalido";
+//		}
 		 
-		return "ok";
-}
+		return result;
+	}
 
 	public List<Patient> getPatientList() {
 		return this.patientList;
@@ -273,6 +294,14 @@ public class PatientController {
 
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+	
+	public String getErrorLabel() {
+		return errorLabel;
+	}
+
+	public void setErrorLabel(String errorLabel) {
+		this.errorLabel = errorLabel;
 	}
 	
 	public static boolean isNumeric(String str) {

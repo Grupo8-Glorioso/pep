@@ -1,15 +1,12 @@
 package glorioso.pep.pages;
 
-import net.serenitybdd.core.annotations.findby.By;
-import net.thucydides.core.annotations.DefaultUrl;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl("http://localhost:8080/pep/cadPacientes.xhtml")
+@DefaultUrl("http://localhost:8080/pep/cadPacientesv2.xhtml")
 public class CreatePatientFormPage extends PageObject 
 {
     @FindBy(id="form:name_field")
@@ -39,11 +36,17 @@ public class CreatePatientFormPage extends PageObject
     
     @FindBy(id="form:submit_button")
     private WebElement submitButton;
+    @FindBy(id="form:read_button")
+    private WebElement readButton;
+    
+    @FindBy(id="form:error_label_field")
+    private WebElement errorLabel;
+
     
     public void fill(String name, String birthDate, String maritalStatus, String phone,
 					String address, String neighborhood, String zipcode, String birthPlace, 
-					String fatherName, String motherName, String cpf, String gender) 
-    {
+					String fatherName, String motherName, String cpf, String gender) {
+    	
     	nameField.sendKeys(name);
     	birthDateField.sendKeys(birthDate);
     	maritalStatusField.sendKeys(maritalStatus);
@@ -61,5 +64,13 @@ public class CreatePatientFormPage extends PageObject
     public void submit() {
     	submitButton.click();
     }
+    
+    public void read() {
+    	readButton.click();
+    }
+ 
+	public String getErrorInfo() {
+		return errorLabel.getText();
+	}
     
 }

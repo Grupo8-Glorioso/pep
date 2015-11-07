@@ -19,7 +19,8 @@ public class ReceptionistSteps extends ScenarioSteps
 	public void fillAndSubmitCreateForm(String name, String birthDate, String maritalStatus, String phone,
 								String address, String neighborhood, String zipcode, String birthPlace, 
 								String fatherName, String motherName, String cpf, String gender) 
-    {
+    {	
+    	
         createPatientFormPage.fill(name, birthDate, maritalStatus, phone, address, neighborhood, zipcode, birthPlace,
         						   fatherName, motherName, cpf, gender);
         createPatientFormPage.submit();
@@ -55,6 +56,11 @@ public class ReceptionistSteps extends ScenarioSteps
 			String info) {
 		assert(updatePatientFormPage.getConfirmedField() == field);
 		assert(updatePatientFormPage.getConfirmedInfo() == info);
+	}
+    
+    @Step
+	public void shouldSeeError(String errorMessage) {
+		assert(createPatientFormPage.getErrorInfo() == errorMessage);
 	}
     
     @Step
