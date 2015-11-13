@@ -12,7 +12,7 @@ Scenario: Physical examination of 'Jose Silva'
 Given the doctor is physically examining 'Jose Silva'
 When the doctor inserts test data:
 {transformer=FROM_LANDSCAPE}
-|height					|1,63m|								|
+|height					|1,63m|
 |weight					|70kg|
 |temperature			|37,7ºC|
 |blood_pressure			|135/90mmHg|
