@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl("http://localhost:8080/pep/cadPacientes.xhtml")
+@DefaultUrl("http://localhost:8080/pep/avaliacao.xhtml")
 public class RegisterEvaluationFormPage extends PageObject 
 {
     @FindBy(id="form:code_CID_10_field")
