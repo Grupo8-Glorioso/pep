@@ -13,7 +13,7 @@ import net.thucydides.core.pages.PageObject;
 public class RegisterObjectiveTestFormPage extends PageObject {
 	@FindBy(id = "form:height_field")
 	private WebElement heightField;
-	@FindBy(id = "form:weightfield")
+	@FindBy(id = "form:weight_field")
 	private WebElement weightField;
 	@FindBy(id = "form:temperature_field")
 	private WebElement temperatureField;
