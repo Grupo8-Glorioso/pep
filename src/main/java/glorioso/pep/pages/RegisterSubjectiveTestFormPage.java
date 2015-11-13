@@ -13,7 +13,7 @@ import net.thucydides.core.pages.PageObject;
 public class RegisterSubjectiveTestFormPage extends PageObject {
 	@FindBy(id = "form:main_complaint_field")
 	private WebElement mainComplaintField;
-	@FindBy(id = "form:history_of_present_illness_fied")
+	@FindBy(id = "form:history_of_present_illness_field")
 	private WebElement historyOfPresentIllnessField;
 	@FindBy(id = "form:symptomatic_interrogation_field")
 	private WebElement symptomaticInterrogationField;
