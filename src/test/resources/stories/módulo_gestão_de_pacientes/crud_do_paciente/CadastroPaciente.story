@@ -15,28 +15,28 @@ When the user enters and submits the patient information:
 |name           |Jose Silva|
 |birth_date     |07/16/1957|
 |marital_status |divorciado|
-|phone	        |2121212121|
+|phone	        |12345678901|
 |address		|Rua 21, casa 2|
 |neighborhood   |Villa 21|
-|zipcode        |1234567|
+|zipcode        |12345678|
 |birth_place    |Osasco SP|
 |father_name    |Carlos Silva|
 |mother_name    |Maria Joana da Silva|
-|cpf    		|12312312311|
+|cpf    		|12345678901|
 |gender			|Masculino|
 Then they should see a confirmation of the creation of: 
 {transformer=FROM_LANDSCAPE}
 |name           |Jose Silva|
 |birth_date     |07/16/1957|
 |marital_status |divorciado|
-|phone	        |2121212121|
+|phone	        |12345678901|
 |address		|Rua 21, casa 2|
 |neighborhood   |Villa 21|
-|zipcode        |1234567|
+|zipcode        |12345678|
 |birth_place    |Osasco SP|
 |father_name    |Carlos Silva|
 |mother_name    |Maria Joana da Silva|
-|cpf    		|12312312311|
+|cpf    		|12345678901|
 |gender			|Masculino|
 Then the system record the audit 'created'
 

@@ -30,7 +30,7 @@ public class PatientController {
 	
 	private List<Patient> patientList;
 	
-	public String insert() {
+	public String insert()  {
 		String result = verifyPatient(this.name, this.CPF, this.zipCode, this.phoneNumber);
 		System.out.println(result);
 		if (result == "ok") {
