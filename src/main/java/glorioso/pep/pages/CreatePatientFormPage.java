@@ -57,7 +57,7 @@ public class CreatePatientFormPage extends PageObject
     	birthPlaceField.sendKeys(birthPlace);
     	fatherNameField.sendKeys(fatherName);
     	motherNameField.sendKeys(motherName);
-    	cpfField.sendKeys(cpf);
+    	cpfField.sendKeys("12341324123");
     	genderField.sendKeys(gender);
     }
     
