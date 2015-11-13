@@ -9,7 +9,7 @@ As a doctor
 I want to physically examine the patient and register the results
 
 Scenario: Physical examination of 'Jose Silva'
-Given the doctor is physically examining 'Jose Silva'
+Given the doctor is physically examining a patient
 When the doctor inserts test data:
 {transformer=FROM_LANDSCAPE}
 |height					|1,63m|

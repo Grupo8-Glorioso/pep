@@ -9,35 +9,29 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.jbehave.core.model.ExamplesTable;
 
-import glorioso.pep.steps.ReceptionistSteps;
+import glorioso.pep.steps.DoctorSteps;
 
-public class RegisterObjectiveTestStepDefinitions 
-{
-    @Steps
-    ReceptionistSteps receptionist;
+public class RegisterObjectiveTestStepDefinitions {
+	@Steps
+	DoctorSteps doctor;
 
-//    @Given("the user is creating a patient")
-//    public void givenTheUserIsOnThePatientCreationForm() {
-//    	receptionist.is_on_the_patient_creation_form();
-//    }
-//
-//    @When("the user enters and submits the patient information: $patient_table")
-//    public void whenTheUserFillsAndSubmitsTheFormWithInformationFrom(ExamplesTable patientTable) 
-//    {
-//    	Map<String, String> patient = patientTable.getRow(0);
-//    	receptionist.fill_and_submit_create_form(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
-//    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
-//    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-//    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
-//    }
-//
-//    @Then("they should see a confirmation of the creation of: $patient_table")
-//    public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(ExamplesTable patientTable) {
-//    	Map<String, String> patient = patientTable.getRow(0);
-//    	receptionist.should_see_confirmation_page(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
-//    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
-//    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-//    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
-//    }
+	@Given("the doctor is physically examining a patient")
+	public void givenTheDoctorIsOnThePatientObjectiveForm() {
+		doctor.isOnThePatientObjectiveForm();
+	}
+
+	@When("the doctor inserts test data:: $patient_table")
+	public void whenTheDoctorRegistersObjectiveInformation(ExamplesTable objectiveTable) {
+		Map<String, String> objective = objectiveTable.getRow(0);
+		doctor.fillAndSaveObjectiveTestForm(objective.get("height"), objective.get("weight"),
+				objective.get("temperature"), objective.get("blood_pressure"), objective.get("heart_rate"),
+				objective.get("breathing_rate"), objective.get("satO2"), objective.get("satCO2"),
+				objective.get("glycemia"), objective.get("comments"));
+	}
+
+	@Then("the doctor should see a confirmation message")
+	public void thenTheyShouldSeeAConfirmationObjectivePage() {
+		doctor.confirmationObjectiveInfo();
+	}
 
 }

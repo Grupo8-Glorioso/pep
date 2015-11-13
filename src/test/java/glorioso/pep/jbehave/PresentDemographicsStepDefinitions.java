@@ -18,18 +18,18 @@ public class PresentDemographicsStepDefinitions
 
     @Given("the receptionist is on the patient search page")
     public void givenTheRecepcionistIsOnThePatientSearchPageForm() {
-    	//receptionist.isOnThePatientSearchPageForm();
+    	receptionist.isOnThePatientCreationForm();
     }
     
     @When("she finds and selects '$name'")
     public void whenTheRecepcionistSelectThePatient(String name) {
-    	//doctor.remove_and_submit(name);
+    	receptionist.searchForPatient(name);
     }
     
     @Then("she should be directed to the page with the demographic data of '$name'")
     // @Alias("they should see a confirmation of the creation of <name>")
-    public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(String name) {
-    	//receptionist.should_see_confirmation_page(name);
+    public void thenSeeShouldBeDirectedToThePageWithDemographicData(String name) {
+    	//receptionist.
     }
 
 }
