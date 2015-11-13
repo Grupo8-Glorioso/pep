@@ -9,27 +9,27 @@ import net.thucydides.core.pages.PageObject;
 @DefaultUrl("http://localhost:8080/pep/cadPacientesv2.xhtml")
 public class CreatePatientFormPage extends PageObject 
 {
-    @FindBy(id="name_field")
+    @FindBy(id="form:name_field")
     private WebElement nameField;
-    @FindBy(id="birth_date_field")
+    @FindBy(id="form:birth_date_field")
     private WebElement birthDateField;
-    @FindBy(id="marital_status_field")
+    @FindBy(id="form:marital_status_field")
     private WebElement maritalStatusField;
-    @FindBy(id="phone_field")
+    @FindBy(id="form:phone_field")
     private WebElement phoneField;
-    @FindBy(id="address_field")
+    @FindBy(id="form:address_field")
     private WebElement addressField;
-    @FindBy(id="neighborhood_field")
+    @FindBy(id="form:neighborhood_field")
     private WebElement neighborhoodField;
-    @FindBy(id="zipcode_field")
+    @FindBy(id="form:zipcode_field")
     private WebElement zipcodeField;
-    @FindBy(id="birth_place_field")
+    @FindBy(id="form:birth_place_field")
     private WebElement birthPlaceField;
-    @FindBy(id="father_name_field")
+    @FindBy(id="form:father_name_field")
     private WebElement fatherNameField;
-    @FindBy(id="mother_name_field")
+    @FindBy(id="form:mother_name_field")
     private WebElement motherNameField;
-    @FindBy(id="cpf_field")
+    @FindBy(id="form:cpf_field")
     private WebElement cpfField;
     @FindBy(id="form:gender_field")
     private WebElement genderField;
