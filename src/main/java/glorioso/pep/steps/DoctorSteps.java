@@ -19,6 +19,11 @@ public class DoctorSteps extends ScenarioSteps {
 	RegisterEvolutionFormPage registerEvolutionFormPage;
 
 	@Step
+	public void hasMadeTheSubjectiveOrObjectiveExaminations() {
+		registerEvaluationFormPage.open();
+	}
+	
+	@Step
 	public void fillAndSaveSubjectiveTestForm(String mainComplaint, String historyOfPresentIllness,
 			String symptomaticInterrogation, String personalAndFamilyHistory,
 			String lifestyleSocioeconomicAndCulturalConditions, String orthoticsAndProsthetics, String comments) {
@@ -43,6 +48,7 @@ public class DoctorSteps extends ScenarioSteps {
 		registerEvaluationFormPage.save();
 	}
 
+
 	@Step
 	public void fillAndSavePlanForm(String conduct, String comments) {
 		registerPlanFormPage.fill(conduct, comments);
@@ -55,4 +61,37 @@ public class DoctorSteps extends ScenarioSteps {
 		registerEvolutionFormPage.save();
 	}
 
+	@Step
+	public void isOnThePatientSubjectiveForm() {
+		registerSubjectiveTestFormPage.open();
+	}
+
+	@Step
+	public void confirmationSubjectiveInfo() {
+		registerSubjectiveTestFormPage.containsText(" ");
+	}
+
+	@Step
+	public void isOnThePatientEvolutionForm() {
+		registerEvolutionFormPage.open();
+	}
+	
+	@Step
+	public void confirmationEvolutionInfo() {
+		registerSubjectiveTestFormPage.containsText(" ");
+	}
+
+	public void isOnThePatientPlanForm() {
+		registerPlanFormPage.open();
+	}
+
+	public void confirmationPlanInfo() {
+		registerSubjectiveTestFormPage.containsText(" ");
+	}
+	
+	@Step
+	public void confirmationEvaluation() {
+		registerEvaluationFormPage.containsText("");
+	}
+	
 }

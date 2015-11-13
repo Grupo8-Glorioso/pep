@@ -9,35 +9,27 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.jbehave.core.model.ExamplesTable;
 
-import glorioso.pep.steps.ReceptionistSteps;
+import glorioso.pep.steps.DoctorSteps;
 
 public class RegisterEvolutionStepDefinitions 
 {
     @Steps
-    ReceptionistSteps receptionist;
+    DoctorSteps doctor;
 
-//    @Given("the user is creating a patient")
-//    public void givenTheUserIsOnThePatientCreationForm() {
-//    	receptionist.is_on_the_patient_creation_form();
-//    }
-//
-//    @When("the user enters and submits the patient information: $patient_table")
-//    public void whenTheUserFillsAndSubmitsTheFormWithInformationFrom(ExamplesTable patientTable) 
-//    {
-//    	Map<String, String> patient = patientTable.getRow(0);
-//    	receptionist.fill_and_submit_create_form(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
-//    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
-//    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-//    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
-//    }
-//
-//    @Then("they should see a confirmation of the creation of: $patient_table")
-//    public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(ExamplesTable patientTable) {
-//    	Map<String, String> patient = patientTable.getRow(0);
-//    	receptionist.should_see_confirmation_page(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
-//    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
-//    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-//    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
-//    }
+    @Given("the doctor is interviewing a returning patient")
+    public void givenTheDoctorIsOnThePatientEvolutionForm() {
+    	doctor.isOnThePatientEvolutionForm();
+    }
+    
+    @When("the doctor inserts commentaries about the disease’s evolution:")
+    public void whenTheDoctorInsertCommentariesAboutEvolution(ExamplesTable evolutionTable) {
+    	Map<String, String> evolution = evolutionTable.getRow(0);
+    	doctor.fillAndSaveEvolutionForm(evolution.get("comments"));
+    }
+
+    @Then("the doctor should see a confirmation page")
+    public void thenTheyShouldSeeAConfirmationEvolutionPage() {
+		doctor.confirmationEvolutionInfo();
+	}
 
 }

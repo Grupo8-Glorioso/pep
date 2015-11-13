@@ -9,35 +9,30 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.jbehave.core.model.ExamplesTable;
 
-import glorioso.pep.steps.ReceptionistSteps;
+import glorioso.pep.steps.DoctorSteps;
 
-public class RegisterSubjectiveTestStepDefinitions 
-{
-//    @Steps
-//    DoctorSteps doctor;
-//
-//    @Given("the user is creating a patient")
-//    public void givenTheUserIsOnThePatientCreationForm() {
-//    	receptionist.is_on_the_patient_creation_form();
-//    }
-//
-//    @When("the user enters and submits the patient information: $patient_table")
-//    public void whenTheUserFillsAndSubmitsTheFormWithInformationFrom(ExamplesTable patientTable) 
-//    {
-//    	Map<String, String> patient = patientTable.getRow(0);
-//    	receptionist.fill_and_submit_create_form(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
-//    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
-//    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-//    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
-//    }
-//
-//    @Then("they should see a confirmation of the creation of: $patient_table")
-//    public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(ExamplesTable patientTable) {
-//    	Map<String, String> patient = patientTable.getRow(0);
-//    	receptionist.should_see_confirmation_page(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
-//    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
-//    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-//    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
-//    }
+public class RegisterSubjectiveTestStepDefinitions {
+	@Steps
+	DoctorSteps doctor;
+
+	@Given("the doctor is interviewing a patient")
+	public void givenTheDoctorIsOnThePatientSubjectiveForm() {
+		doctor.isOnThePatientSubjectiveForm();
+	}
+
+	@When("the doctor registers the information given by the patient: $patient_table")
+	public void whenTheDoctorRegistersSubjectiveInformation(ExamplesTable subjectiveTable) {
+		Map<String, String> subjective = subjectiveTable.getRow(0);
+		doctor.fillAndSaveSubjectiveTestForm(subjective.get("main_complaint"),
+				subjective.get("history_of_present_illness"), subjective.get("symptomatic_interrogation"),
+				subjective.get("personal_and_family_history"),
+				subjective.get("lifestyle_socioeconomic_and_cultural_conditions"),
+				subjective.get("orthotics_and_prosthetics"), subjective.get("comments"));
+	}
+
+	@Then("the doctor should see a confirmation message")
+	public void thenTheyShouldSeeAConfirmationSubjectivePage() {
+		doctor.confirmationSubjectiveInfo();
+	}
 
 }

@@ -9,35 +9,27 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.jbehave.core.model.ExamplesTable;
 
-import glorioso.pep.steps.ReceptionistSteps;
+import glorioso.pep.steps.DoctorSteps;
 
 public class RegisterPlanStepDefinitions 
 {
-//    @Steps
-//    ReceptionistSteps receptionist;
-//
-//    @Given("the user is creating a patient")
-//    public void givenTheUserIsOnThePatientCreationForm() {
-//    	receptionist.is_on_the_patient_creation_form();
-//    }
-//
-//    @When("the user enters and submits the patient information: $patient_table")
-//    public void whenTheUserFillsAndSubmitsTheFormWithInformationFrom(ExamplesTable patientTable) 
-//    {
-//    	Map<String, String> patient = patientTable.getRow(0);
-//    	receptionist.fill_and_submit_create_form(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
-//    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
-//    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-//    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
-//    }
-//
-//    @Then("they should see a confirmation of the creation of: $patient_table")
-//    public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(ExamplesTable patientTable) {
-//    	Map<String, String> patient = patientTable.getRow(0);
-//    	receptionist.should_see_confirmation_page(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
-//    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
-//    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-//    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
-//    }
+    @Steps
+    DoctorSteps doctor;
+
+    @Given("the doctor has determined a treatment plan for a patient")
+    public void givenTheDoctorIsOnThePatientPlanForm() {
+    	doctor.isOnThePatientPlanForm();
+    }
+
+    @When("the doctor register the conduct for the patient and comments:")
+    public void whenTheDoctorRegisterTheConductAndComments(ExamplesTable planTable) {
+    	Map<String, String> plan = planTable.getRow(0);
+    	doctor.fillAndSavePlanForm(plan.get("conduct"), plan.get("comments"));
+    }
+    
+    @Then("the doctor should see a confirmation message")
+    public void thenTheyShouldSeeAConfirmationPlanPage() {
+		doctor.confirmationPlanInfo();
+	}
 
 }

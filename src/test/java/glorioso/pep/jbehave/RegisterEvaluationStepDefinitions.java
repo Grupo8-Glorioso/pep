@@ -9,35 +9,29 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.jbehave.core.model.ExamplesTable;
 
-import glorioso.pep.steps.ReceptionistSteps;
+import glorioso.pep.steps.DoctorSteps;
 
 public class RegisterEvaluationStepDefinitions 
 {
     @Steps
-    ReceptionistSteps receptionist;
+    DoctorSteps doctor;
 
-//    @Given("the user is creating a patient")
-//    public void givenTheUserIsOnThePatientCreationForm() {
-//    	receptionist.is_on_the_patient_creation_form();
-//    }
-//
-//    @When("the user enters and submits the patient information: $patient_table")
-//    public void whenTheUserFillsAndSubmitsTheFormWithInformationFrom(ExamplesTable patientTable) 
-//    {
-//    	Map<String, String> patient = patientTable.getRow(0);
-//    	receptionist.fill_and_submit_create_form(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
-//    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
-//    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-//    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
-//    }
-//
-//    @Then("they should see a confirmation of the creation of: $patient_table")
-//    public void thenTheyShouldSeeAConfirmationPageWithInformationFrom(ExamplesTable patientTable) {
-//    	Map<String, String> patient = patientTable.getRow(0);
-//    	receptionist.should_see_confirmation_page(patient.get("name"), patient.get("birth_date"), patient.get("marital_status"),
-//    								 patient.get("phone"), patient.get("address"), patient.get("neighborhood"),
-//    								 patient.get("zipcode"), patient.get("birth_place"), patient.get("father_name"),
-//    								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
-//    }
-
+    @Given("the doctor has made the subjective or objective examinations of patient")
+    public void givenTheDoctorHasMadeTheSubjectiveOrObjectiveExaminationsOfPatient() {
+    	doctor.hasMadeTheSubjectiveOrObjectiveExaminations();
+    }
+    
+    @When("he registers the diagnosis, CID 10 code and comments: $evaluation_table")
+    public void whenHeRegistersTheDiagnosisCID10CodeAndComments(ExamplesTable evaluationTable) {
+    	Map<String,String> evaluate = evaluationTable.getRow(0);
+    	doctor.fillAndSaveEvaluationForm(evaluate.get("code_CID_10"),
+    			evaluate.get("hipotesis_diagnostic"),
+    			evaluate.get("definitive_diagnosis"),
+    			evaluate.get("comments"));
+    }
+    
+    @Then("the doctor should see a confirmation message")
+    public void theDoctorShouldSeeAConfirmationMessage() {
+    	doctor.confirmationEvaluation();
+    }
 }
