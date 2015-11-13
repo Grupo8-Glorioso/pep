@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 import net.thucydides.core.pages.PageObject;
 
-//@DefaultUrl("http://localhost:8080/pep/cadPacientes.xhtml")		Alterar quando tiver para esse cara
+@DefaultUrl("http://localhost:8080/pep/subjetivo.xhtml")
 public class RegisterSubjectiveTestFormPage extends PageObject {
 	@FindBy(id = "form:main_complaint_field")
 	private WebElement mainComplaintField;
