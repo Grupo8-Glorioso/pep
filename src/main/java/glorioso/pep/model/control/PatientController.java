@@ -33,8 +33,6 @@ public class PatientController {
 	private String errorLabel;
 	
 	public String insert() {
-		setErrorLabel("");
-		
 		String result = verifyPatient(this.name, this.CPF, this.zipCode, this.phoneNumber);
 		System.out.println(result);
 		if (result == "ok") {

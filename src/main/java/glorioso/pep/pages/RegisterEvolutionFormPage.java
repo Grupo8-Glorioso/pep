@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl("http://localhost:8080/pep/cadPacientes.xhtml")
+@DefaultUrl("http://localhost:8080/pep/evolucao.xhtml")
 public class RegisterEvolutionFormPage extends PageObject 
 {
     @FindBy(id="form:comments_field")

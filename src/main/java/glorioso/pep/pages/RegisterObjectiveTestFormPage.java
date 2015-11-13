@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 import net.thucydides.core.pages.PageObject;
 
-//@DefaultUrl("http://localhost:8080/pep/cadPacientes.xhtml")			Alterar quando tiver para esse cara
+@DefaultUrl("http://localhost:8080/pep/objetivo.xhtml")
 public class RegisterObjectiveTestFormPage extends PageObject {
 	@FindBy(id = "form:height_field")
 	private WebElement heightField;

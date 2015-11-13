@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl("http://www.google.com") //so que nao
+@DefaultUrl("http://localhost:8080/pep/cadPacientesv2.xhtml")
 public class ReadPatientFormPage extends PageObject {
 
     @FindBy(name="name_field")
