@@ -4,49 +4,100 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 	<h:head>
 		<title>PEP</title>
+		<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" />
+		<link rel="stylesheet" href="main.css" />
 	</h:head>
 	<h:body>
-		<f:view>
-			<h:form id="form">
-				<h3>Subjetivo</h3>
-				<h:outputLabel value="Main Complaint: " for="main_complaint_field" />
-				<h:inputText id="main_complaint_field" />
-				<br/>
-				<br/>
-				<h:outputLabel value="History of Present Illness: " for="history_of_present_illness_field" />
-				<h:inputText id="history_of_present_illness_field" />
-				<br/>
-				<br/>
-				<h:outputLabel value="Symptomatic Interrogation: " for="symptomatic_interrogation_field" />
-				<h:inputText id="symptomatic_interrogation_field" />
-				<br/>
-				<br/>
-				<h:outputLabel value="Personal and Family History: " for="personal_and_family_history_field" />
-				<h:inputText id="personal_and_family_history_field" />
-				<br />
-				<br />
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">PEP - Dados Subjetivos do Paciente</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="#">Logout</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+	    <div class="container-fluid" id="master">
+	      <div class="row">
+	        <div class="col-sm-3 col-md-2 sidebar">
+	          <ul class="nav nav-sidebar">
+	          	<li><a href="#">Apresentacao</a></li>
+	            <li class="active"><a href="#">Subjetivo <span class="sr-only">(current)</span></a></li>
+	            <li><a href="#">Objetivo</a></li>
+	            <li><a href="#">Avaliacao</a></li>
+	            <li><a href="#">Plano</a></li>
+	            <li><a href="#">Evolucao</a></li>           
+	          </ul>
+	        </div>
+        	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<f:view>
+					<h:form id="form">
+						<h1 class="page-header">Dados Subjetivos</h1>
+						
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">Main Complaint: </span>
+						  <h:inputText class="form-control" placeholder="Main Complaint" aria-describedby="basic-addon1" 
+						  id="main_complaint_field" />
+						</div>
+						<br/>
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">History of Present Illness: </span>
+						  <h:inputText class="form-control" placeholder="History of Present Illness" aria-describedby="basic-addon1" 
+						  id="history_of_present_illness_field" />
+						</div>
+						<br />
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">Symptomatic Interrogation: </span>
+						  <h:inputText class="form-control" placeholder="Symptomatic Interrogation" aria-describedby="basic-addon1" 
+						  id="symptomatic_interrogation_field" />
+						</div>
+						<br />
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">Personal and Family History: </span>
+						  <h:inputText class="form-control" placeholder="Personal and Family History" aria-describedby="basic-addon1" 
+						  id="personal_and_family_history_field" />
+						</div>
+						<br />
 
-				<h:outputLabel value="Lifestyle, Socioeconomic and Cultural Conditions: " for="lifestyle_socioeconomic_and_cultural_conditions_field" />
-				<h:inputText id="lifestyle_socioeconomic_and_cultural_conditions_field" />
-				<br/>
-				<br/>				
-				<h:outputLabel value="Orthotics and Prosthetics: " for="orthotics_and_prosthetics_field" />
-				<h:inputText id="orthotics_and_prosthetics_field" />
-				<br/>
-				<br/>
-				<h:outputLabel value="Comments: " for="comments_field" />
-				<h:inputText id="comments_field" />
-				<br/>
-				<br/>
-
-				<br/>
-				<h:commandButton id="save_button" value="Registrar Subjetivos"/>				
-			
-				<br/>
-				<br/>		
-				
-			</h:form>
-		</f:view>
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">Lifestyle, Socioeconomic and Cultural Conditions: </span>
+						  <h:inputText class="form-control" placeholder="Lifestyle, Socioeconomic and Cultural Conditions" aria-describedby="basic-addon1" 
+						  id="lifestyle_socioeconomic_and_cultural_conditions_field" />
+						</div>
+						<br />
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">Orthotics and Prosthetics: </span>
+						  <h:inputText class="form-control" placeholder="Orthotics and Prosthetics" aria-describedby="basic-addon1" 
+						  id="orthotics_and_prosthetics_field" />
+						</div>
+						<br />
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">Comments: </span>
+						  <h:inputText class="form-control" placeholder="Comments" aria-describedby="basic-addon1" 
+						  id="comments_field" />
+						</div>
+						<br />
+		
+						<br/>
+						<h:commandButton id="save_button" value="Registrar Subjetivos"/>				
+					
+						<br/>
+						<br/>		
+						
+					</h:form>
+				</f:view>
+				</div>
+			</div>
+		</div>
 	</h:body>
 
 </html>
