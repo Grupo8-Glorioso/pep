@@ -195,9 +195,13 @@ html,body {
 #soapeSelector li{
   font-size: 18px;
 }
+#soapeSelector li a{
+  color: #4A4A4A;
+}
 #soapeSelector .active a{
   background-color: #f1f1f1;
   border-bottom: none;
+  color: #3E4B69;
 }
 
 .soape-container {
