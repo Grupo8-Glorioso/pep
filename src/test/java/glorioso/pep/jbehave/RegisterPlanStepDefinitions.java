@@ -21,7 +21,7 @@ public class RegisterPlanStepDefinitions
     	doctor.isOnThePatientPlanForm();
     }
 
-    @When("the doctor register the conduct for the patient and comments:")
+    @When("the doctor register the conduct for the patient and comments: $patient_table")
     public void whenTheDoctorRegisterTheConductAndComments(ExamplesTable planTable) {
     	Map<String, String> plan = planTable.getRow(0);
     	doctor.fillAndSavePlanForm(plan.get("conduct"), plan.get("comments"));

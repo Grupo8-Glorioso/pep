@@ -16,7 +16,7 @@ public class RegisterEvaluationStepDefinitions
     @Steps
     DoctorSteps doctor;
 
-    @Given("the doctor has made the subjective or objective examinations of patient")
+    @Given("the doctor has made the subjective and objective examinations of a patient")
     public void givenTheDoctorHasMadeTheSubjectiveOrObjectiveExaminationsOfPatient() {
     	doctor.hasMadeTheSubjectiveOrObjectiveExaminations();
     }

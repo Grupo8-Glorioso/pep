@@ -63,7 +63,7 @@ public class DoctorSteps extends ScenarioSteps {
 
 	@Step
 	public void isOnThePatientObjectiveForm() {
-		registerSubjectiveTestFormPage.open();
+		registerObjectiveTestFormPage.open();
 	}
 
 	@Step
