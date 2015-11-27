@@ -21,7 +21,7 @@ public class RegisterEvolutionStepDefinitions
     	doctor.isOnThePatientEvolutionForm();
     }
     
-    @When("the doctor inserts commentaries about the disease’s evolution:")
+    @When("the doctor inserts commentaries about the disease evolution: $patient_table")
     public void whenTheDoctorInsertCommentariesAboutEvolution(ExamplesTable evolutionTable) {
     	Map<String, String> evolution = evolutionTable.getRow(0);
     	doctor.fillAndSaveEvolutionForm(evolution.get("comments"));

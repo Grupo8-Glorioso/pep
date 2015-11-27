@@ -20,7 +20,7 @@ public class RegisterObjectiveTestStepDefinitions {
 		doctor.isOnThePatientObjectiveForm();
 	}
 
-	@When("the doctor inserts test data:: $patient_table")
+	@When("the doctor inserts test data: $patient_table")
 	public void whenTheDoctorRegistersObjectiveInformation(ExamplesTable objectiveTable) {
 		Map<String, String> objective = objectiveTable.getRow(0);
 		doctor.fillAndSaveObjectiveTestForm(objective.get("height"), objective.get("weight"),
