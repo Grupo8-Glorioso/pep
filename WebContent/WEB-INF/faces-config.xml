@@ -11,6 +11,21 @@
 		<managed-bean-class>glorioso.pep.model.entity.Patient</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>subjective</managed-bean-name>
+		<managed-bean-class>glorioso.pep.model.entity.Subjective</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>objective</managed-bean-name>
+		<managed-bean-class>glorioso.pep.model.entity.Objective</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>soapeController</managed-bean-name>
+		<managed-bean-class>glorioso.pep.model.control.SoapeController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
  <navigation-rule>
   <from-view-id>/index.xhtml</from-view-id>
   <navigation-case>

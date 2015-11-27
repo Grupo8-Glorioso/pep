@@ -46,49 +46,49 @@
 						<div class="input-group">
 						  <span class="input-group-addon" id="basic-addon1">Main Complaint: </span>
 						  <h:inputText class="form-control" placeholder="Main Complaint" aria-describedby="basic-addon1" 
-						  id="main_complaint_field" />
+						  id="main_complaint_field" value="#{soapeController.mainComplaint}"/>
 						</div>
 						<br/>
 						<div class="input-group">
 						  <span class="input-group-addon" id="basic-addon1">History of Present Illness: </span>
 						  <h:inputText class="form-control" placeholder="History of Present Illness" aria-describedby="basic-addon1" 
-						  id="history_of_present_illness_field" />
+						  id="history_of_present_illness_field" value="#{soapeController.presentHistory}"/>
 						</div>
 						<br />
 						<div class="input-group">
 						  <span class="input-group-addon" id="basic-addon1">Symptomatic Interrogation: </span>
 						  <h:inputText class="form-control" placeholder="Symptomatic Interrogation" aria-describedby="basic-addon1" 
-						  id="symptomatic_interrogation_field" />
+						  id="symptomatic_interrogation_field" value="#{soapeController.symptomaticInterrogation}"/>
 						</div>
 						<br />
 						<div class="input-group">
 						  <span class="input-group-addon" id="basic-addon1">Personal and Family History: </span>
 						  <h:inputText class="form-control" placeholder="Personal and Family History" aria-describedby="basic-addon1" 
-						  id="personal_and_family_history_field" />
+						  id="personal_and_family_history_field" value="#{soapeController.familyHistory}"/>
 						</div>
 						<br />
 
 						<div class="input-group">
 						  <span class="input-group-addon" id="basic-addon1">Lifestyle, Socioeconomic and Cultural Conditions: </span>
 						  <h:inputText class="form-control" placeholder="Lifestyle, Socioeconomic and Cultural Conditions" aria-describedby="basic-addon1" 
-						  id="lifestyle_socioeconomic_and_cultural_conditions_field" />
+						  id="lifestyle_socioeconomic_and_cultural_conditions_field" value="#{soapeController.lifestyle}"/>
 						</div>
 						<br />
 						<div class="input-group">
 						  <span class="input-group-addon" id="basic-addon1">Orthotics and Prosthetics: </span>
 						  <h:inputText class="form-control" placeholder="Orthotics and Prosthetics" aria-describedby="basic-addon1" 
-						  id="orthotics_and_prosthetics_field" />
+						  id="orthotics_and_prosthetics_field" value="#{soapeController.orthotics}"/>
 						</div>
 						<br />
 						<div class="input-group">
 						  <span class="input-group-addon" id="basic-addon1">Comments: </span>
 						  <h:inputText class="form-control" placeholder="Comments" aria-describedby="basic-addon1" 
-						  id="comments_field" />
+						  id="comments_field" value="#{soapeController.comments}"/>
 						</div>
 						<br />
 		
 						<br/>
-						<h:commandButton id="save_button" value="Registrar Subjetivos"/>				
+						<h:commandButton id="save_button" action="#{soapeController.insertSubjective}" value="Registrar Subjetivos"/>				
 					
 						<br/>
 						<br/>		
