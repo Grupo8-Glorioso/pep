@@ -1,27 +1,147 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
 	<h:head>
 		<title>PEP</title>
+		<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" />
+		<link rel="stylesheet" href="main.css" />
 	</h:head>
 	<h:body>
-		<f:view>
-			<h:dataTable value="#{patientController.patientList}" var="p">
-				<h:column>#{p.name}</h:column>
-				<h:column>#{p.CPF}</h:column>
-				<h:column>#{p.gender}</h:column>
-				<h:column>#{p.motherName}</h:column>
-				<h:column>#{p.fatherName}</h:column>
-				<h:column>#{p.address}</h:column>
-				<h:column>#{p.neighborhood}</h:column>
-				<h:column>#{p.birthPlace}</h:column>
-				<h:column>#{p.zipCode}</h:column>
-				<h:column>#{p.maritalStatus}</h:column>
-				<h:column>#{p.birthDate}</h:column>
-				<h:column>#{p.phoneNumber}</h:column>
-			</h:dataTable>
-		</f:view>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	          </button>
+	          <a class="navbar-brand" href="#" id="mytitle">PEP - Consulta SOAPE</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="#">Logout</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+
+
+	    <div class="container-fluid" id="master">
+	      <div class="row">
+
+	      	<!-- SIDEBAR -->
+	        <div class="col-sm-3 col-md-2 sidebar">
+	          <ul class="nav nav-sidebar">
+	          	<li class="brand"><a href="#">Pacientes</a></li>
+		            <li><a href="cadPacientesv2.xhtml">Cadastro</a></li>
+		            <li class="active"><a href="consPacientes.xhtml">Consulta</a></li>
+	            <li class="brand"><a href="#">Consulta Médica</a></li>
+		            <li><a href="cadSoapePac.xhtml">Cadastro</a></li>
+		            <li><a href="#">Consulta</a></li>
+	          </ul>
+	        </div>
+
+
+	        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+		        <!-- PAGE HERE -->
+
+				<p class="consult-message">Pacientes encontrados:</p>				
+				<f:view>
+					<h:dataTable class="consult-table" value="#{patientController.patientList}" var="p" border="1">
+
+				        <h:column class="consult-col">
+					        <f:facet name="header">
+					            <h:outputText value="Nome" />
+					        </f:facet>
+					        <h:outputText value=" #{p.name}" />
+					    </h:column>
+
+				        <h:column class="consult-col">
+					        <f:facet name="header">
+					            <h:outputText value="CPF" />
+					        </f:facet>
+					        <h:outputText value="#{p.CPF}" />
+					    </h:column>
+
+				        <h:column class="consult-col">
+					        <f:facet name="header">
+					            <h:outputText value="Gênero" />
+					        </f:facet>
+					        <h:outputText value="#{p.gender}" />
+					    </h:column>					    
+
+				        <h:column class="consult-col">
+					        <f:facet name="header">
+					            <h:outputText value="Nome da mãe" />
+					        </f:facet>
+					        <h:outputText value="#{p.motherName}" />
+					    </h:column>					    
+
+						<h:column class="consult-col">
+					        <f:facet name="header">
+					            <h:outputText value="Nome do pai" />
+					        </f:facet>
+					        <h:outputText value="#{p.fatherName}" />
+					    </h:column>					    
+					    				
+					    <h:column class="consult-col">
+					        <f:facet name="header">
+					            <h:outputText value="Endereço" />
+					        </f:facet>
+					        <h:outputText value="#{p.address}" />
+					    </h:column>					    
+    					    
+					    <h:column class="consult-col">
+					        <f:facet name="header">
+					            <h:outputText value="Bairro" />
+					        </f:facet>
+					        <h:outputText value="#{p.neighborhood}" />
+					    </h:column>				
+			    					    
+					    <h:column class="consult-col">
+					        <f:facet name="header">
+					            <h:outputText value="Cidade Natal" />
+					        </f:facet>
+					        <h:outputText value="#{p.birthPlace}" />
+					    </h:column>					    
+
+					    <h:column class="consult-col">
+					        <f:facet name="header">
+					            <h:outputText value="CEP" />
+					        </f:facet>
+					        <h:outputText value="#{p.zipCode}" />
+					    </h:column>					    
+					    					    
+					    <h:column class="consult-col">
+					        <f:facet name="header">
+					            <h:outputText value="Estado Civil" />
+					        </f:facet>
+					        <h:outputText value="#{p.maritalStatus}" />
+					    </h:column>					    
+					    					    
+					    <h:column class="consult-col">
+					        <f:facet name="header">
+					            <h:outputText value="Data de Nascimento" />
+					        </f:facet>
+					        <h:outputText value="#{p.birthDate}" />
+					    </h:column>					    
+					    		
+					    <h:column class="consult-col">
+					        <f:facet name="header">
+					            <h:outputText value="Telefone" />
+					        </f:facet>
+					        <h:outputText value="#{p.phoneNumber}" />
+					    </h:column>		
+
+					</h:dataTable>
+				</f:view>
+
+			</div>
+		  </div>
+		</div>
 	</h:body>
 
 </html>

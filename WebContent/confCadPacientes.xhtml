@@ -1,53 +1,111 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
 	<h:head>
 		<title>PEP</title>
+		<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" />
+		<link rel="stylesheet" href="main.css" />
 	</h:head>
 	<h:body>
-		<f:view>
-			<h:form id="form">
-				<p><h:outputLabel value="Cadastro de paciente realizado com sucesso" /></p>
-				<br />
-				<h:outputLabel value="Nome: " for="nameReceived" />
-				<h:outputText id="nameReceived" value="#{patientController.name}" />
-				<br />
-				<h:outputLabel value="Nome da mãe: " for="motherNameReceived" />
-				<h:outputText id="motherNameReceived" value="#{patientController.motherName}" />
-				<br />
-				<h:outputLabel value="Nome do pai: " for="fatherNameReceived" />
-				<h:outputText id="fatherNameReceived" value="#{patientController.fatherName}" />
-				<br />
-				<h:outputLabel value="CPF: " for="cpfReceived" />
-				<h:outputText id="cpfReceived" value="#{patientController.CPF}" />
-				<br />
-				<h:outputLabel value="Gênero: " for="genderReceived" />
-				<h:outputText id="genderReceived" value="#{patientController.gender}" />
-				<br />
-				<h:outputLabel value="Endereço: " for="addressReceived" />
-				<h:outputText id="addressReceived" value="#{patientController.address}" />
-				<br />
-				<h:outputLabel value="Bairro: " for="neighborhoodReceived" />
-				<h:outputText id="neighborhoodReceived" value="#{patientController.neighborhood}" />
-				<br />
-				<h:outputLabel value="Cidade Natal: " for="birthPlaceReceived" />
-				<h:outputText id="birthPlaceReceived" value="#{patientController.birthPlace}" />
-				<br />
-				<h:outputLabel value="CEP: " for="zipCodeReceived" />
-				<h:outputText id="zipCodeReceived" value="#{patientController.zipCode}" />
-				<br />
-				<h:outputLabel value="Estado Civil: " for="maritalStatusReceived" />
-				<h:outputText id="maritalStatusReceived" value="#{patientController.maritalStatus}" />
-				<br />
-				<h:outputLabel value="Data de Nascimento: " for="birthDateReceived" />
-				<h:outputText id="birthDateReceived" value="#{patientController.birthDate}" />
-				<br />
-				<h:outputLabel value="Telefone: " for="phoneReceived" />
-				<h:outputText id="phoneReceived" value="#{patientController.phoneNumber}" />
-				<br />				
-			</h:form>
-		</f:view>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	          </button>
+	          <a class="navbar-brand" href="#" id="mytitle">PEP - Consulta SOAPE</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="#">Logout</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+
+
+	    <div class="container-fluid" id="master">
+	      <div class="row">
+
+	      	<!-- SIDEBAR -->
+	        <div class="col-sm-3 col-md-2 sidebar">
+	          <ul class="nav nav-sidebar">
+	          	<li class="brand"><a href="#">Pacientes</a></li>
+		            <li class="active"><a href="cadPacientesv2.xhtml">Cadastro</a></li>
+		            <li><a href="consPacientes.xhtml">Consulta</a></li>
+	            <li class="brand"><a href="#">Consulta Médica</a></li>
+		            <li><a href="cadSoapePac.xhtml">Cadastro</a></li>
+		            <li><a href="#">Consulta</a></li>
+	          </ul>
+	        </div>
+
+
+	        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+		        <!-- PAGE HERE -->
+			
+				<f:view>
+					<h:form id="form">						
+						<div class="alert alert-info" role="alert">
+							<p class="answer-message">Cadastro de paciente realizado com sucesso!</p>
+						</div>
+						<h:outputLabel class="answer-label" value="Nome: " for="nameReceived" />
+						<h:outputText class="answer-value" id="nameReceived" value="#{patientController.name}" />
+						<br />						
+
+						<h:outputLabel class="answer-label" value="Nome da mãe: " for="motherNameReceived" />
+						<h:outputText class="answer-value" id="motherNameReceived" value="#{patientController.motherName}" />
+						<br />
+
+						<h:outputLabel class="answer-label" value="Nome do pai: " for="fatherNameReceived" />
+						<h:outputText class="answer-value" id="fatherNameReceived" value="#{patientController.fatherName}" />
+						<br />
+
+						<h:outputLabel class="answer-label" value="CPF: " for="cpfReceived" />
+						<h:outputText class="answer-value" id="cpfReceived" value="#{patientController.CPF}" />
+						<br />
+
+						<h:outputLabel class="answer-label" value="Gênero: " for="genderReceived" />
+						<h:outputText class="answer-value" id="genderReceived" value="#{patientController.gender}" />
+						<br />
+
+						<h:outputLabel class="answer-label" value="Endereço: " for="addressReceived" />
+						<h:outputText class="answer-value" id="addressReceived" value="#{patientController.address}" />
+						<br />
+
+						<h:outputLabel class="answer-label" value="Bairro: " for="neighborhoodReceived" />
+						<h:outputText class="answer-value" id="neighborhoodReceived" value="#{patientController.neighborhood}" />
+						<br />
+
+						<h:outputLabel class="answer-label" value="Cidade Natal: " for="birthPlaceReceived" />
+						<h:outputText class="answer-value" id="birthPlaceReceived" value="#{patientController.birthPlace}" />
+						<br />
+
+						<h:outputLabel class="answer-label" value="CEP: " for="zipCodeReceived" />
+						<h:outputText class="answer-value" id="zipCodeReceived" value="#{patientController.zipCode}" />
+						<br />
+
+						<h:outputLabel class="answer-label" value="Estado Civil: " for="maritalStatusReceived" />
+						<h:outputText class="answer-value" id="maritalStatusReceived" value="#{patientController.maritalStatus}" />
+						<br />
+						<h:outputLabel class="answer-label" value="Data de Nascimento: " for="birthDateReceived" />
+						<h:outputText class="answer-value" id="birthDateReceived" value="#{patientController.birthDate}" />
+						<br />
+
+						<h:outputLabel class="answer-label" value="Telefone: " for="phoneReceived" />
+						<h:outputText class="answer-value" id="phoneReceived" value="#{patientController.phoneNumber}" />
+						<br />		
+
+					</h:form>
+				</f:view>
+
+			</div>
+		  </div>
+		</div>
 	</h:body>
 
 </html>
