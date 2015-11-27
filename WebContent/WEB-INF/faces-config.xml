@@ -34,7 +34,7 @@
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
-  <from-view-id>/cadPacientes.xhtml</from-view-id>
+  <from-view-id>/cadPacientesv2.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>confCadPacientes</from-outcome>
    <to-view-id>/confCadPacientes.xhtml</to-view-id>

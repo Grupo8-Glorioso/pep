@@ -10,37 +10,37 @@
 			<h:form id="form">
 				<h3>Objetivo</h3>
 				<h:outputLabel value="Height: " for="height_field" />
-				<h:inputText id="height_field" type="text" value="#{patientController.height}"/>
+				<h:inputText id="height_field" type="text" value="#{soapeController.height}"/>
 				<br/>
 				<br/>
 				<h:outputLabel value="Weight: " for="weight_field" />
-				<h:inputText id="weight_field" value="#{patientController.weight}"/>
+				<h:inputText id="weight_field" value="#{soapeController.weight}"/>
 				<br/>
 				<br/>
 				<h:outputLabel value="Temperature: " for="temperature_field" />
-				<h:inputText id="temperature_field" value="#{patientController.temperature}"/>
+				<h:inputText id="temperature_field" value="#{soapeController.temperature}"/>
 				<br/>
 				<br/>
 				<h:outputLabel value="Blood Pressure: " for="blood_pressure_field" />
-				<h:inputText id="blood_pressure_field" value="#{patientController.bloodPressure}"/>
+				<h:inputText id="blood_pressure_field" value="#{soapeController.bloodPressure}"/>
 				<br />
 				<br />
 
 				<h:outputLabel value="Heart Rate: " for="heart_rate_field" />
-				<h:inputText id="heart_rate_field" value="#{patientController.heartRate}"/>
+				<h:inputText id="heart_rate_field" value="#{soapeController.heartRate}"/>
 				<br/>
 				<br/>				
 				<h:outputLabel value="Breathing Rate: " for="breathing_rate_field" />
-				<h:inputText id="breathing_rate_field" value="#{patientController.breathingRate}"/>
+				<h:inputText id="breathing_rate_field" value="#{soapeController.breathingRate}"/>
 				<br/>
 				<br/>
 				
 				<h:outputLabel value="Sat. O2: " for="satO2_field" />
-				<h:inputText id="satO2_field" value="#{patientController.o2Sat}"/>
+				<h:inputText id="satO2_field" value="#{soapeController.o2Sat}"/>
 				<br/>
 				<br/>
 				<h:outputLabel value="Sat. CO2: " for="satCO2_field" />
-				<h:inputText id="satCO2_field" value="#{patientController.co2Sat}"/>
+				<h:inputText id="satCO2_field" value="#{soapeController.co2Sat}"/>
 				<br/>
 				<br/>
 				<h:outputLabel value="Glycemia: " for="glycemia_field" />
@@ -48,12 +48,12 @@
 				<br/>
 				<br/>
 				<h:outputLabel value="Comments: " for="comments_field" />
-				<h:inputText id="comments_field" value="#{patientController.comments}"/>
+				<h:inputText id="comments_field" value="#{soapeController.comments}"/>
 				<br/>
 				<br/>
 
 				<br/>
-				<h:commandButton id="save_button" action="#{patientController.insertObjective}" value="Registrar Objetivos"/>				
+				<h:commandButton id="save_button" action="#{soapeController.insertObjective}" value="Registrar Objetivos"/>				
 			
 				<br/>
 				<br/>		
