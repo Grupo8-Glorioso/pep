@@ -40,7 +40,7 @@ public class CreatePatientStepDefinitions
     								 patient.get("mother_name"), patient.get("cpf"), patient.get("gender"));
     }
     
-    @Then("they should see an error message informing a duplicate $error")
+    @Then("they should see an error message informing a duplicate '$error'")
     public void theyShouldSeeAnErrorMessageInformingADuplicate(String error){
     	receptionist.shouldSeeError(error);
     }

@@ -53,6 +53,6 @@ When the user enters and submits the patient information:
 |birth_place    |Osasco SP|
 |father_name    |Carlos Silva|
 |mother_name    |Maria Joana da Silva|
-|cpf    		|42828164850|
+|cpf    		||
 |gender			|Masculino|
-Then they should see an error message informing a duplicate 'Já existe esse usuário'
+Then they should see an error message informing a duplicate 'Ja existe esse usuario'

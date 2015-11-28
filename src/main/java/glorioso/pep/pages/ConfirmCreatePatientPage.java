@@ -8,46 +8,46 @@ import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://localhost:8080/pep/confCadPacientes.xhtml")
 public class ConfirmCreatePatientPage extends PageObject {
-	@FindBy(id = "nameReceived")
+	@FindBy(id = "form:nameReceived")
 	private WebElement nameField;
-	@FindBy(id = "birthDateReceived")
+	@FindBy(id = "form:birthDateReceived")
 	private WebElement birthDateField;
-	@FindBy(id = "maritalStatusReceived")
+	@FindBy(id = "form:maritalStatusReceived")
 	private WebElement maritalStatusField;
-	@FindBy(id = "phoneReceived")
+	@FindBy(id = "form:phoneReceived")
 	private WebElement phoneField;
-	@FindBy(id = "addressReceived")
+	@FindBy(id = "form:addressReceived")
 	private WebElement addressField;
-	@FindBy(id = "neighborhoodReceived")
+	@FindBy(id = "form:neighborhoodReceived")
 	private WebElement neighborhoodField;
-	@FindBy(id = "zipCodeReceived")
+	@FindBy(id = "form:zipCodeReceived")
 	private WebElement zipcodeField;
-	@FindBy(id = "birthPlaceReceived")
+	@FindBy(id = "form:birthPlaceReceived")
 	private WebElement birthPlaceField;
-	@FindBy(id = "fatherNameReceived")
+	@FindBy(id = "form:fatherNameReceived")
 	private WebElement fatherNameField;
-	@FindBy(id = "motherNameReceived")
+	@FindBy(id = "form:motherNameReceived")
 	private WebElement motherNameField;
-	@FindBy(id = "cpfReceived")
+	@FindBy(id = "form:cpfReceived")
 	private WebElement cpfField;
-	@FindBy(id = "genderReceived")
+	@FindBy(id = "form:genderReceived")
 	private WebElement genderField;
 
 	public void confirm(String name, String birthDate, String maritalStatus, String phone, String address,
 			String neighborhood, String zipcode, String birthPlace, String fatherName, String motherName, String cpf,
 			String gender) {
-		assert(nameField.getText() == name);
-		assert(birthDateField.getText() == birthDate);
-		assert(maritalStatusField.getText() == maritalStatus);
-		assert(phoneField.getText() == phone);
-		assert(addressField.getText() == address);
-		assert(neighborhoodField.getText() == neighborhood);
-		assert(zipcodeField.getText() == zipcode);
-		assert(birthPlaceField.getText() == birthPlace);
-		assert(fatherNameField.getText() == fatherName);
-		assert(motherNameField.getText() == motherName);
-		assert(cpfField.getText() == cpf);
-		assert(genderField.getText() == gender);
+		assert(nameField.getText().equals(name));
+		assert(birthDateField.getText().equals(birthDate));
+		assert(maritalStatusField.getText().equals(maritalStatus));
+		assert(phoneField.getText().equals(phone));
+		assert(addressField.getText().equals(address));
+		assert(neighborhoodField.getText().equals(neighborhood));
+		assert(zipcodeField.getText().equals(zipcode));
+		assert(birthPlaceField.getText().equals(birthPlace));
+		assert(fatherNameField.getText().equals(fatherName));
+		assert(motherNameField.getText().equals(motherName));
+		assert(cpfField.getText().equals(cpf));
+		assert(genderField.getText().equals(gender));
 	}
 
 }

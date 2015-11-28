@@ -54,19 +54,19 @@ public class ReceptionistSteps extends ScenarioSteps
     @Step
 	public void shouldSeeConfirmationPageFieldInfo(String field,
 			String info) {
-		assert(updatePatientFormPage.getConfirmedField() == field);
-		assert(updatePatientFormPage.getConfirmedInfo() == info);
+		assert(updatePatientFormPage.getConfirmedField().equals(field));
+		assert(updatePatientFormPage.getConfirmedInfo().equals(info));
 	}
     
     @Step
 	public void shouldSeeError(String errorMessage) {
-		assert(createPatientFormPage.getErrorInfo() == errorMessage);
+		assert(createPatientFormPage.getErrorInfo().equals(errorMessage));
 	}
     
     @Step
     public void searchForPatient(String name)
     {
-    	assert(false == true);
+        assert(false == true);
     }
 
 }

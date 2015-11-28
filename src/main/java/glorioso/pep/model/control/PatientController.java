@@ -49,7 +49,7 @@ public class PatientController {
 				List<Patient> existsPatient = where.query();
 				
 				if (!existsPatient.isEmpty()){
-					errorLabel = "Já existe esse usuário";
+					errorLabel = "Ja existe esse usuario";
 				} else {
 					pd.create(p);
 					result = "confCadPacientes";
